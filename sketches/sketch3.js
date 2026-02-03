@@ -51,8 +51,7 @@ registerSketch('sk3', function (p) {
     if (mn < 10)
       mn = "0" + mn
     hr %= 12
-    p.text(hr + ":" + mn + ":" + sc + noon, p.width / 2, p.height / 2);
-
+    p.text(hr + ":" + mn + ":" + sc + noon, p.width / 2, p.height / 2 - 80);
   }
 
   p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
