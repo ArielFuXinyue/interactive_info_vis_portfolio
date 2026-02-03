@@ -47,6 +47,7 @@ registerSketch('sk3', function (p) {
     // p.textFont(clockFont);
     p.textAlign(p.CENTER, p.CENTER);
     p.textSize(p.width / 8);
+    p.textStyle(p.BOLD);
     let noon = hr >= 12 ? " PM" : " AM"
     if (mn < 10)
       mn = "0" + mn
