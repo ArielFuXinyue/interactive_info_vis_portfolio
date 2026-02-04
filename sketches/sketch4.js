@@ -39,6 +39,20 @@ registerSketch('sk4', function (p) {
   let startMs = 0;
   let elapsedMs = 0;
 
+  function getElapsedMs() {
+    // If running, time = (now - start) + previously saved time
+    // If paused, time = previously saved time
+    return running ? (p.millis() - startMs) + elapsedMs : elapsedMs;
+  }
+
+  function msToHHMMSS(ms) {
+    const total = p.floor(ms / 1000);       // total seconds
+    const hh = p.floor(total / 3600);
+    const mm = p.floor((total % 3600) / 60);
+    const ss = total % 60;
+    return { hh: p.nf(hh, 2), mm: p.nf(mm, 2), ss: p.nf(ss, 2) }; 
+  }
+
   // p.clock = function () {
   //   let h = p.hour();    // 0–23
   //   let m = p.minute(); // 0–59
