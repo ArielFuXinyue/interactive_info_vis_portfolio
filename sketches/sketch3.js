@@ -69,7 +69,7 @@ registerSketch('sk3', function (p) {
 
     // filled bar portion
     let x = p.lerp(left, right, progress);
-    p.fill(255, 255, 255, 70);
+    p.fill(255, 255, 255, 200);
     p.rect(left, y - trackH / 2, x - left, trackH, radius);
 
     // tennis ball
