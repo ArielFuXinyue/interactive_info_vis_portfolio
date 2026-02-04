@@ -18,10 +18,10 @@ registerSketch('sk2', function (p) {
   p.draw = function () {
     // p.image(bgImg, 0, 0, p.width, p.height);
     p.background(100, 180, 250);
-    p.clockFace();
+    p.clock();
   };
 
-  p.clockFace = function () {
+  p.clock = function () {
     p.push();
     p.translate(p.width / 2, p.height / 2);
 
@@ -41,6 +41,37 @@ registerSketch('sk2', function (p) {
       p.point(0, -R * 0.8);
       p.rotate(6);
     }
+    p.pop();
+
+    let h = p.hour();
+    let m = p.minute();
+    let s = p.second();
+
+    // Center
+    // p.translate(p.width / 2, p.height / 2);
+
+    // second hand
+    p.push();
+    p.stroke(225);
+    p.strokeWeight(1);
+    p.rotate(p.map(s, 0, 60, 0, 360));
+    p.line(0, 0, 0, -R * 0.8);
+    p.pop();
+
+    // minute hand
+    p.push();
+    p.stroke(255);
+    p.strokeWeight(3);
+    p.rotate(p.map(m, 0, 60, 0, 360));
+    p.line(0, 0, 0, -R * 0.6);
+    p.pop();
+
+    // hour hand
+    p.push();
+    p.stroke(255);
+    p.strokeWeight(5);
+    p.rotate(p.map(h % 12, 0, 12, 0, 360));
+    p.line(0, 0, 0, -R * 0.4);
     p.pop();
 
     p.pop();
