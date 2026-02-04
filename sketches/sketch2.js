@@ -62,6 +62,34 @@ registerSketch('sk2', function (p) {
     // mark the current minute as "seen"
     seenMinutes[m] = true;
 
+    // draw tennis balls for every seen minute
+    p.push();
+    p.imageMode(p.CENTER);
+    let ballSize = 30;   
+    let ratio = ballImg.width / ballImg.height;
+    let drawW, drawH;
+    if (ratio >= 1) {
+      drawW = ballSize;
+      drawH = ballSize / ratio;
+    } else {
+      drawH = ballSize;
+      drawW = ballSize * ratio;
+    }
+
+    let ballRadius = R * 0.8; // tweak (close to ticks)
+
+    for (let i = 0; i < 60; i++) {
+      if (!seenMinutes[i]) continue;
+
+      p.push();
+      p.rotate(i * 6);                 // 6 degrees per minute match ticks
+      p.image(ballImg, 0, -ballRadius, drawW, drawH); 
+      p.pop();
+    }
+
+    p.imageMode(p.CORNER);
+    p.pop();
+
     // clock hands appearence
     // second hand
     p.push();
