@@ -9,10 +9,12 @@ registerSketch('sk2', function (p) {
   // let bgImg;
   let ballImg;
   let racketImg;
+  let hourhandImg;
   p.preload = function () {
     // bgImg = p.loadImage("images/tennis-court-background.avif");
     ballImg = p.loadImage("images/tennis_ball_cartoon.png");
     racketImg = p.loadImage("images/upright_tennis_racket.png");
+    hourhandImg = p.loadImage("images/hour_hand.png");
   };
 
   p.draw = function () {
@@ -72,10 +74,12 @@ registerSketch('sk2', function (p) {
 
     // hour hand
     p.push();
-    p.stroke(255);
-    p.strokeWeight(5);
     p.rotate(p.map(h % 12, 0, 12, 0, 360));
-    p.line(0, 0, 0, -R * 0.4);
+    p.imageMode(p.CENTER);
+    let scaleHour = (R * 0.6) / hourhandImg.height;
+    p.scale(scaleHour);
+    p.image(hourhandImg, 0, -hourhandImg.height * 0.4, hourhandImg.width, hourhandImg.height);
+    p.imageMode(p.CORNER);
     p.pop();
 
     p.pop();
