@@ -34,31 +34,36 @@ registerSketch('sk4', function (p) {
 
   }
 
-  p.clock = function () {
-    let h = p.hour();    // 0–23
-    let m = p.minute(); // 0–59
-    let s = p.second(); // 0–59
+  // stopwatch
+  let running = false;
+  let startMs = 0;
+  let elapsedMs = 0;
 
-    // AM / PM
-    let noon = h >= 12 ? " PM" : " AM";
+  // p.clock = function () {
+  //   let h = p.hour();    // 0–23
+  //   let m = p.minute(); // 0–59
+  //   let s = p.second(); // 0–59
 
-    // convert to 12-hour format
-    h = h % 12;
-    if (h === 0) h = 12;
+  //   // AM / PM
+  //   let noon = h >= 12 ? " PM" : " AM";
 
-    // padded strings
-    const label =
-      h + ':' + p.nf(m, 2) + ':' + p.nf(s, 2) + noon;
+  //   // convert to 12-hour format
+  //   h = h % 12;
+  //   if (h === 0) h = 12;
 
-    // draw text
-    p.noStroke();
-    p.fill("lightgray");
-    p.textAlign(p.CENTER, p.CENTER);
-    p.textStyle(p.BOLD);
-    p.textSize(p.width / 8);
+  //   // padded strings
+  //   const label =
+  //     h + ':' + p.nf(m, 2) + ':' + p.nf(s, 2) + noon;
 
-    p.text(label, p.width / 2, p.height / 2 - 60);
-  }
+  //   // draw text
+  //   p.noStroke();
+  //   p.fill("lightgray");
+  //   p.textAlign(p.CENTER, p.CENTER);
+  //   p.textStyle(p.BOLD);
+  //   p.textSize(p.width / 8);
+
+  //   p.text(label, p.width / 2, p.height / 2 - 60);
+  // }
 
   p.windowResized = function () {  };
 });
