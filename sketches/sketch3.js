@@ -19,6 +19,7 @@ registerSketch('sk3', function (p) {
     p.clock();
     p.sliderSeconds();
     p.sliderMinutes();
+    p.sliderHours();
   }
 
   p.clock = function () {
@@ -60,7 +61,7 @@ registerSketch('sk3', function (p) {
     let barWidth = right - left; 
 
     // bar thickness and rounding
-    let trackH = 20;
+    let trackH = 10;
     let radius = trackH / 2;
 
     // draw the bar
@@ -88,13 +89,13 @@ registerSketch('sk3', function (p) {
     let progress = (m + s / 60.0) / 59.0;
 
     // place below the seconds bar
-    let y = p.height / 2 + 80;
+    let y = p.height / 2 + 85;
 
     let left = p.width * 0.2;
     let right = p.width * 0.8;
     let barWidth = right - left;
 
-    let trackH = 20;
+    let trackH = 18;
     let radius = trackH / 2;
 
     // track
@@ -104,7 +105,7 @@ registerSketch('sk3', function (p) {
 
     // fill
     let x = p.lerp(left, right, progress);
-    p.fill(180, 220, 180, 200);
+    p.fill(180, 220, 180, 230);
     p.rect(left, y - trackH / 2, x - left, trackH, radius);
 
     // ball (slightly smaller than seconds)
@@ -113,6 +114,40 @@ registerSketch('sk3', function (p) {
     p.image(ballImg, x, y, ballSize, ballSize);
     p.imageMode(p.CORNER);
   }
+
+  p.sliderHours = function () {
+    let hIndex = p.hour() % 12; // 0..11
+    let m = p.minute();
+
+    // smooth hour progress 
+    let progress = (hIndex + m / 60.0) / 12.0; // 0.. <1
+
+    // place below the minutes bar
+    let y = p.height / 2 + 130;
+
+    let left = p.width * 0.2;
+    let right = p.width * 0.8;
+    let barWidth = right - left;
+
+    let trackH = 28;
+    let radius = trackH / 2;
+
+    // track
+    p.noStroke();
+    p.fill(255, 255, 255, 120);
+    p.rect(left, y - trackH / 2, barWidth, trackH, radius);
+
+    // fill
+    let x = p.lerp(left, right, progress);
+    p.fill(100, 220, 120, 230);
+    p.rect(left, y - trackH / 2, x - left, trackH, radius);
+
+    // ball (smallest)
+    let ballSize = 40;
+    p.imageMode(p.CENTER);
+    p.image(ballImg, x, y, ballSize, ballSize);
+    p.imageMode(p.CORNER);
+  };
 
   p.windowResized = function () {  };
 });
