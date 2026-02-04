@@ -3,7 +3,6 @@ registerSketch('sk3', function (p) {
   p.setup = function () {
     // p.createCanvas(p.windowWidth, p.windowHeight);
     p.createCanvas(800, 500);
-    // clockFont = p.loadFont("digital-7.ttf");
   };
 
   // adding a tennis court background image
