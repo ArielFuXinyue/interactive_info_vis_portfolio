@@ -29,14 +29,11 @@ registerSketch('sk3', function (p) {
     bgImg = p.loadImage("images/tennis-court-background.avif");
   };
 
-  
-
   p.draw = function () {
     p.image(bgImg, 0, 0, p.width, p.height);
     p.clock();
+    p.slider();
   }
-
-  
 
   p.clock = function () {
     let h = p.hour();    // 0–23
@@ -62,6 +59,25 @@ registerSketch('sk3', function (p) {
     p.textSize(p.width / 8);
 
     p.text(label, p.width / 2, p.height / 2 - 60);
+  }
+
+  p.slider = function() {
+    // locate below the time
+    let y = p.height / 2 + 60;
+
+    // bar length inproportion to the canvas
+    let left = p.width * 0.2;
+    let right = p.width * 0.8;
+    let barWidth = right - left; 
+
+    // bar thickness and rounding
+    let trackH = 24;
+    let radius = trackH / 2;
+
+    // draw the bar
+    p.noStroke();
+    p.fill(255, 255, 255, 160);
+    p.rect(left, y - trackH / 2, barWidth, trackH, radius);
   }
 
   p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
