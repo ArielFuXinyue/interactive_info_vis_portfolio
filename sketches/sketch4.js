@@ -63,7 +63,7 @@ registerSketch('sk4', function (p) {
 
     // button labels
     p.fill(50);
-    let startLabel = running ? "Pause" : "Start";
+    let startLabel = "Start";
     p.text(startLabel, startX + btnW / 2, btnY + btnH / 2);
     p.text("Reset", resetX + btnW / 2, btnY + btnH / 2);
   }
@@ -87,15 +87,10 @@ registerSketch('sk4', function (p) {
     return { hh: p.nf(hh, 2), mm: p.nf(mm, 2), ss: p.nf(ss, 2) }; 
   }
 
-  p.toggleRunning = function() {
-    running = !running;
-
-    if (running) {
-      // starting/resuming
+  p.startStopwatch = function () {
+    if (!running) {
+      running = true;
       startMs = p.millis();
-    } else {
-      // pausing
-      elapsedMs = p.getElapsedMs();
     }
   }
 
@@ -107,10 +102,29 @@ registerSketch('sk4', function (p) {
 
   p.keyPressed = function() {
     if (p.key === ' ') {
-      p.toggleRunning()
+      p.startStopwatch();
     }
     if (p.key === 'r' || p.key === 'R') {
-      p.resetStopwatch()
+      p.resetStopwatch();
+    }
+  };
+
+  p.mousePressed = function() {
+    let startX = p.width / 2 - btnW - 23;
+    let resetX = p.width / 2 + 23;
+
+    // Start/Pause hitbox
+    if (p.mouseX >= startX && p.mouseX <= startX + btnW &&
+        p.mouseY >= btnY && p.mouseY <= btnY + btnH) {
+      p.startStopwatch();
+      return;
+    }
+
+    // Reset hitbox
+    if (p.mouseX >= resetX && p.mouseX <= resetX + btnW &&
+        p.mouseY >= btnY && p.mouseY <= btnY + btnH) {
+      p.resetStopwatch();
+      return;
     }
   }
 
