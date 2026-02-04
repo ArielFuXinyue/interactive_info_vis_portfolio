@@ -25,7 +25,7 @@ registerSketch('sk4', function (p) {
   let ballImg;
   p.preload = function () {
     bgImg = p.loadImage("images/tennis-court-background.avif");
-    ballImg = p.loadImage("images/tennis_ball_cartoon.png");
+    // ballImg = p.loadImage("images/tennis_ball_cartoon.png");
   };
 
   p.draw = function () {
