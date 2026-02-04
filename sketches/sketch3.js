@@ -18,7 +18,8 @@
 // Example 2
 registerSketch('sk3', function (p) {
   p.setup = function () {
-    p.createCanvas(p.windowWidth, p.windowHeight);
+    // p.createCanvas(p.windowWidth, p.windowHeight);
+    p.createCanvas(800, 500);
     // clockFont = p.loadFont("digital-7.ttf");
   };
 
@@ -60,7 +61,7 @@ registerSketch('sk3', function (p) {
     p.textStyle(p.BOLD);
     p.textSize(p.width / 8);
 
-    p.text(label, p.width / 2, p.height / 2 - 80);
+    p.text(label, p.width / 2, p.height / 2 - 60);
   }
 
   p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
