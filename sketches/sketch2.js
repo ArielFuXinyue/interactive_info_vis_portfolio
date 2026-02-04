@@ -3,6 +3,7 @@
 registerSketch('sk2', function (p) {
   p.setup = function () {
     p.createCanvas(800, 500);
+    p.angleMode(p.DEGREES); 
   };
 
   // let bgImg;
@@ -31,6 +32,17 @@ registerSketch('sk2', function (p) {
 
     p.fill(81,132,183, 180);
     p.ellipse(0, 0, R * 2, R * 2);
+
+    // Tick markers around perimeter of clock
+    p.push();
+    p.stroke(200); 
+    p.strokeWeight(3);
+    for (let ticks = 0; ticks < 60; ticks += 1) {
+      p.point(0, -R * 0.8);
+      p.rotate(6);
+    }
+    p.pop();
+
     p.pop();
   }
 
