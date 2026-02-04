@@ -28,7 +28,6 @@ registerSketch('sk3', function (p) {
     bgImg = p.loadImage("images/tennis-court-background.avif");
   };
 
-  // change clock font
   
 
   p.draw = function () {
@@ -39,20 +38,29 @@ registerSketch('sk3', function (p) {
   
 
   p.clock = function () {
-    let hr = p.hour();
-    let mn = p.minute();
-    let sc = p.second();
+    let h = p.hour();    // 0–23
+    let m = p.minute(); // 0–59
+    let s = p.second(); // 0–59
 
+    // AM / PM
+    let noon = h >= 12 ? " PM" : " AM";
+
+    // convert to 12-hour format
+    h = h % 12;
+    if (h === 0) h = 12;
+
+    // padded strings
+    const label =
+      h + ':' + p.nf(m, 2) + ':' + p.nf(s, 2) + noon;
+
+    // draw text
+    p.noStroke();
     p.fill("white");
-    // p.textFont(clockFont);
     p.textAlign(p.CENTER, p.CENTER);
-    p.textSize(p.width / 8);
     p.textStyle(p.BOLD);
-    let noon = hr >= 12 ? " PM" : " AM"
-    if (mn < 10)
-      mn = "0" + mn
-    hr %= 12
-    p.text(hr + ":" + mn + ":" + sc + noon, p.width / 2, p.height / 2 - 80);
+    p.textSize(p.width / 8);
+
+    p.text(label, p.width / 2, p.height / 2 - 80);
   }
 
   p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
