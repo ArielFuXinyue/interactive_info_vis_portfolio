@@ -28,11 +28,13 @@ registerSketch('sk4', function (p) {
     // ballImg = p.loadImage("images/tennis_ball_cartoon.png");
   };
 
+  
+
   p.draw = function () {
     p.image(bgImg, 0, 0, p.width, p.height);
 
-    const tMs = getElapsedMs();
-    const { hh, mm, ss } = msToHHMMSS(tMs);
+    const tMs = p.getElapsedMs();
+    const { hh, mm, ss } = p.msToHHMMSS(tMs);
 
     p.noStroke();
     p.fill("lightgray");
@@ -48,18 +50,45 @@ registerSketch('sk4', function (p) {
   let startMs = 0;
   let elapsedMs = 0;
 
-  function getElapsedMs() {
+  p.getElapsedMs = function() {
     // If running, time = (now - start) + previously saved time
     // If paused, time = previously saved time
     return running ? (p.millis() - startMs) + elapsedMs : elapsedMs;
   }
 
-  function msToHHMMSS(ms) {
+  p.msToHHMMSS = function(ms) {
     const total = p.floor(ms / 1000); // total seconds
     const hh = p.floor(total / 3600);
     const mm = p.floor((total % 3600) / 60);
     const ss = total % 60;
     return { hh: p.nf(hh, 2), mm: p.nf(mm, 2), ss: p.nf(ss, 2) }; 
+  }
+
+  p.toggleRunning = function() {
+    running = !running;
+
+    if (running) {
+      // starting/resuming
+      startMs = p.millis();
+    } else {
+      // pausing
+      elapsedMs = p.getElapsedMs();
+    }
+  }
+
+  p.resetStopwatch = function() {
+    running = false;
+    startMs = p.millis();
+    elapsedMs = 0;
+  }
+
+  p.keyPressed = function() {
+    if (p.key === ' ') {
+      p.toggleRunning()
+    }
+    if (p.key === 'r' || p.key === 'R') {
+      p.resetStopwatch()
+    }
   }
 
   // p.clock = function () {
