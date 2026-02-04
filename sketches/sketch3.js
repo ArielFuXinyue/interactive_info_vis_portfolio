@@ -17,7 +17,8 @@ registerSketch('sk3', function (p) {
   p.draw = function () {
     p.image(bgImg, 0, 0, p.width, p.height);
     p.clock();
-    p.slider();
+    p.sliderSeconds();
+    p.sliderMinutes();
   }
 
   p.clock = function () {
@@ -46,12 +47,12 @@ registerSketch('sk3', function (p) {
     p.text(label, p.width / 2, p.height / 2 - 60);
   }
 
-  p.slider = function() {
+  p.sliderSeconds = function() {
     let s = p.second();
     let progress = s / 59.0; // 0..1
 
     // locate below the time
-    let y = p.height / 2 + 60;
+    let y = p.height / 2 + 40;
 
     // bar length inproportion to the canvas
     let left = p.width * 0.2;
@@ -59,7 +60,7 @@ registerSketch('sk3', function (p) {
     let barWidth = right - left; 
 
     // bar thickness and rounding
-    let trackH = 24;
+    let trackH = 20;
     let radius = trackH / 2;
 
     // draw the bar
@@ -73,7 +74,41 @@ registerSketch('sk3', function (p) {
     p.rect(left, y - trackH / 2, x - left, trackH, radius);
 
     // tennis ball
-    let ballSize = 48;
+    let ballSize = 40;
+    p.imageMode(p.CENTER);
+    p.image(ballImg, x, y, ballSize, ballSize);
+    p.imageMode(p.CORNER);
+  }
+
+  p.sliderMinutes = function() {
+    let m = p.minute();
+    let s = p.second();
+
+    // smooth minute progress
+    let progress = (m + s / 60.0) / 59.0;
+
+    // place below the seconds bar
+    let y = p.height / 2 + 80;
+
+    let left = p.width * 0.2;
+    let right = p.width * 0.8;
+    let barWidth = right - left;
+
+    let trackH = 20;
+    let radius = trackH / 2;
+
+    // track
+    p.noStroke();
+    p.fill(255, 255, 255, 140);
+    p.rect(left, y - trackH / 2, barWidth, trackH, radius);
+
+    // fill
+    let x = p.lerp(left, right, progress);
+    p.fill(180, 220, 180, 200);
+    p.rect(left, y - trackH / 2, x - left, trackH, radius);
+
+    // ball (slightly smaller than seconds)
+    let ballSize = 40;
     p.imageMode(p.CENTER);
     p.image(ballImg, x, y, ballSize, ballSize);
     p.imageMode(p.CORNER);
