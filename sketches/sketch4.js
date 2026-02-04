@@ -30,8 +30,17 @@ registerSketch('sk4', function (p) {
 
   p.draw = function () {
     p.image(bgImg, 0, 0, p.width, p.height);
-    p.clock();
 
+    const tMs = getElapsedMs();
+    const { hh, mm, ss } = msToHHMMSS(tMs);
+
+    p.noStroke();
+    p.fill("lightgray");
+    p.textAlign(p.CENTER, p.CENTER);
+    p.textStyle(p.BOLD);
+    p.textSize(p.width / 8);
+
+    p.text(`${hh}:${mm}:${ss}`, p.width / 2, p.height / 2 - 60);
   }
 
   // stopwatch
@@ -46,7 +55,7 @@ registerSketch('sk4', function (p) {
   }
 
   function msToHHMMSS(ms) {
-    const total = p.floor(ms / 1000);       // total seconds
+    const total = p.floor(ms / 1000); // total seconds
     const hh = p.floor(total / 3600);
     const mm = p.floor((total % 3600) / 60);
     const ss = total % 60;
