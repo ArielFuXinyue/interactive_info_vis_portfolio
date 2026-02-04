@@ -23,9 +23,13 @@ registerSketch('sk4', function (p) {
   // adding a tennis court background image
   let bgImg;
   let ballImg;
+  let racketLeftImg;
+  let racketRightImg;
   p.preload = function () {
     bgImg = p.loadImage("images/tennis-court-background.avif");
-    // ballImg = p.loadImage("images/tennis_ball_cartoon.png");
+    ballImg = p.loadImage("images/tennis_ball_cartoon.png");
+    racketLeftImg = p.loadImage("images/tennis_racket_left.png");
+    racketRightImg = p.loadImage("images/tennis_racket_right.png");
   };
 
   // buttons
@@ -36,6 +40,24 @@ registerSketch('sk4', function (p) {
   p.draw = function () {
     p.image(bgImg, 0, 0, p.width, p.height);
 
+    // rackets
+    p.imageMode(p.CENTER);
+
+    // place them left/right of the timer
+    let yR = p.height / 2 - 80;          
+    let leftX = p.width / 2 - 260;       
+    let rightX = p.width / 2 + 260;
+
+    // racket size
+    let rW = 140;                        
+    let rH = 220;
+
+    p.image(racketLeftImg, leftX, yR, rW, rH);
+    p.image(racketRightImg, rightX, yR, rW, rH);
+
+    p.imageMode(p.CORNER);
+
+    // stopwatch time
     const tMs = p.getElapsedMs();
     const { hh, mm, ss } = p.msToHHMMSS(tMs);
 
