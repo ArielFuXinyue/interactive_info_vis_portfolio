@@ -1,20 +1,3 @@
-// Instance-mode sketch for tab 3
-// registerSketch('sk3', function (p) {
-//   p.setup = function () {
-//     p.createCanvas(p.windowWidth, p.windowHeight);
-//   };
-//   p.draw = function () {
-//     p.background(240, 200, 200);
-//     p.fill(180, 60, 60);
-//     p.textSize(32);
-//     p.textAlign(p.CENTER, p.CENTER);
-//     p.text('HWK #4. B', p.width / 2, p.height / 2);
-//   };
-//   p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
-
-
-// });
-
 // Example 2
 registerSketch('sk3', function (p) {
   p.setup = function () {
@@ -25,8 +8,10 @@ registerSketch('sk3', function (p) {
 
   // adding a tennis court background image
   let bgImg;
+  let ballImg;
   p.preload = function () {
     bgImg = p.loadImage("images/tennis-court-background.avif");
+    ballImg = p.loadImage("images/tennis_ball.webp");
   };
 
   p.draw = function () {
@@ -53,7 +38,7 @@ registerSketch('sk3', function (p) {
 
     // draw text
     p.noStroke();
-    p.fill("white");
+    p.fill("lightgray");
     p.textAlign(p.CENTER, p.CENTER);
     p.textStyle(p.BOLD);
     p.textSize(p.width / 8);
@@ -62,6 +47,9 @@ registerSketch('sk3', function (p) {
   }
 
   p.slider = function() {
+    let s = p.second();
+    let progress = s / 59.0; // 0..1
+
     // locate below the time
     let y = p.height / 2 + 60;
 
@@ -78,8 +66,19 @@ registerSketch('sk3', function (p) {
     p.noStroke();
     p.fill(255, 255, 255, 160);
     p.rect(left, y - trackH / 2, barWidth, trackH, radius);
+
+    // filled bar portion
+    let x = p.lerp(left, right, progress);
+    p.fill(255, 255, 255, 70);
+    p.rect(left, y - trackH / 2, x - left, trackH, radius);
+
+    // tennis ball
+    let ballSize = 48;
+    p.imageMode(p.CENTER);
+    p.image(ballImg, x, y, ballSize, ballSize);
+    p.imageMode(p.CORNER);
   }
 
-  p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
+  p.windowResized = function () {  };
 });
 
