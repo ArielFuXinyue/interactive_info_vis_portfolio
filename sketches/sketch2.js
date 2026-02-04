@@ -6,6 +6,10 @@ registerSketch('sk2', function (p) {
     p.angleMode(p.DEGREES); 
   };
 
+  // minute memory 
+  let seenHour = -1; // track last seen hour
+  let seenMinutes = new Array(60).fill(false); // 0 - 59
+
   // let bgImg;
   let ballImg;
   let racketImg;
@@ -49,6 +53,16 @@ registerSketch('sk2', function (p) {
     let m = p.minute();
     let s = p.second();
 
+    // reset when a new hour starts
+    if (h !== seenHour) {
+      seenHour = h;
+      seenMinutes.fill(false);
+    }
+
+    // mark the current minute as "seen"
+    seenMinutes[m] = true;
+
+    // clock hands appearence
     // second hand
     p.push();
     p.stroke(225);
@@ -84,7 +98,6 @@ registerSketch('sk2', function (p) {
 
     p.pop();
   }
-
 
   p.windowResized = function () { };
 });
