@@ -17,6 +17,7 @@ registerSketch('sk3', function (p) {
   p.draw = function () {
     p.image(bgImg, 0, 0, p.width, p.height);
     p.clock();
+    
     p.sliderSeconds();
     p.sliderMinutes();
     p.sliderHours();
@@ -60,6 +61,12 @@ registerSketch('sk3', function (p) {
     let right = p.width * 0.8;
     let barWidth = right - left; 
 
+    // label
+    p.fill(230);
+    p.textSize(12);
+    p.textAlign(p.RIGHT, p.CENTER);
+    p.text("SEC", left - 10, y);
+
     // bar thickness and rounding
     let trackH = 10;
     let radius = trackH / 2;
@@ -95,6 +102,12 @@ registerSketch('sk3', function (p) {
     let right = p.width * 0.8;
     let barWidth = right - left;
 
+    // label
+    p.fill(180, 220, 180);
+    p.textSize(12);
+    p.textAlign(p.RIGHT, p.CENTER);
+    p.text("MIN", left - 10, y);
+
     let trackH = 18;
     let radius = trackH / 2;
 
@@ -128,6 +141,12 @@ registerSketch('sk3', function (p) {
     let left = p.width * 0.2;
     let right = p.width * 0.8;
     let barWidth = right - left;
+
+    // label
+    p.fill(100, 220, 120);
+    p.textSize(12);
+    p.textAlign(p.RIGHT, p.CENTER);
+    p.text("HR", left - 10, y);
 
     let trackH = 28;
     let radius = trackH / 2;
