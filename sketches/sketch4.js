@@ -40,8 +40,9 @@ registerSketch('sk4', function (p) {
   p.draw = function () {
     p.image(bgImg, 0, 0, p.width, p.height);
 
-    // rackets
+    // rackets and ball
     p.imageMode(p.CENTER);
+    p.drawBall();
 
     // place them left/right of the timer
     let yR = p.height / 2 - 80;          
@@ -150,7 +151,32 @@ registerSketch('sk4', function (p) {
     }
   }
 
-  
+  p.drawBall = function () {
+    if (!running) return; // only fly when timer starts
+
+    // use stopwatch time so it starts from 0 when you hit Start
+    const t = p.getElapsedMs() / 1000.0; // seconds since started
+
+    // racket positions (match your draw values)
+    const yR = p.height / 2 - 110;
+    const leftX = p.width / 2 - 260;
+    const rightX = p.width / 2 + 260;
+
+    // flying back and forth
+    const speed = 1.2; 
+    const phase = (t * speed) % 2;       
+    const progress = phase < 1 ? phase : 2 - phase; 
+
+    // ball position
+    const x = p.lerp(leftX, rightX, progress);
+    const y = yR; 
+
+    // draw ball
+    const ballSize = 55;
+    p.imageMode(p.CENTER);
+    p.image(ballImg, x, y, ballSize, ballSize);
+    p.pop();
+  };
 
   p.windowResized = function () {  };
 });
