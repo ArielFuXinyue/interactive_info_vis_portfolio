@@ -28,7 +28,10 @@ registerSketch('sk4', function (p) {
     // ballImg = p.loadImage("images/tennis_ball_cartoon.png");
   };
 
-  
+  // buttons
+  let btnW = 140;
+  let btnH = 40;
+  let btnY = 300;
 
   p.draw = function () {
     p.image(bgImg, 0, 0, p.width, p.height);
@@ -43,6 +46,26 @@ registerSketch('sk4', function (p) {
     p.textSize(p.width / 8);
 
     p.text(`${hh}:${mm}:${ss}`, p.width / 2, p.height / 2 - 60);
+
+    // buttons
+    p.textAlign(p.CENTER, p.CENTER);
+    p.textSize(18);
+    p.noStroke();
+
+    // Start/Pause button
+    let startX = p.width / 2 - btnW - 23;
+    let resetX = p.width / 2 + 23;
+
+    // button backgrounds
+    p.fill(255, 255, 255, 180);
+    p.rect(startX, btnY, btnW, btnH, 12);
+    p.rect(resetX, btnY, btnW, btnH, 12);
+
+    // button labels
+    p.fill(50);
+    let startLabel = running ? "Pause" : "Start";
+    p.text(startLabel, startX + btnW / 2, btnY + btnH / 2);
+    p.text("Reset", resetX + btnW / 2, btnY + btnH / 2);
   }
 
   // stopwatch
