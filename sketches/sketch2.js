@@ -57,6 +57,11 @@ registerSketch('sk2', function (p) {
     if (h !== seenHour) {
       seenHour = h;
       seenMinutes.fill(false);
+
+      // backfill: show all balls from 0 to current minute
+      for (let i = 0; i <= m; i++) {
+        seenMinutes[i] = true;
+      }
     }
 
     // mark the current minute as "seen"
