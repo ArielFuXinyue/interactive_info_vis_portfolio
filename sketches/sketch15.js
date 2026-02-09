@@ -88,7 +88,60 @@ registerSketch('sk15', function (p) {
         console.log("Sorted Formats:", formats);
     };
 
-    
+    p.draw = function () {
+        p.background(255);
+        
+        const marginX = 80;  // Space for format labels on the left
+        const marginY = 60;  // Top margin
+        const chartHeight = 80; // Height of each individual histogram
+        const gap = 40;      // Space between histograms
+        const timelineWidth = p.width - marginX - 50;
+
+        p.textAlign(p.LEFT, p.CENTER);
+        p.textSize(12);
+
+        formats.forEach((format, index) => {
+            // Calculate vertical position for this specific format
+            let yOffset = marginY + index * (chartHeight + gap);
+            let baselineY = yOffset + chartHeight;
+
+            // 1. Draw Format Label (e.g., "Vinyl Single", "8-Track")
+            p.noStroke();
+            p.fill(0);
+            p.text(format, 10, baselineY - chartHeight / 2);
+
+            // 2. Draw the Timeline Axis (1973 - 2018)
+            p.stroke(150);
+            p.line(marginX, baselineY, marginX + timelineWidth, baselineY);
+            
+            // Draw year markers as seen in sketch (1973, 2000, 2018)
+            p.noStroke();
+            p.fill(100);
+            p.textSize(10);
+            p.text("1973", marginX, baselineY + 15);
+            p.text("2000", marginX + p.map(2000, 1973, 2018, 0, timelineWidth), baselineY + 15);
+            p.text("2018", marginX + timelineWidth - 25, baselineY + 15);
+
+            // 3. Draw the Histogram Bars
+            let data = byFormat[format];
+            // Find max revenue for this specific format to scale bars
+            let maxRev = p.max(data.map(d => d.revenue)) || 1;
+
+            p.fill(100, 150, 250, 150); // Semi-transparent blue
+            p.stroke(50, 100, 200);
+
+            data.forEach(d => {
+                let barX = p.map(d.year, 1973, 2018, marginX, marginX + timelineWidth);
+                let barH = p.map(d.revenue, 0, maxRev, 0, chartHeight);
+                
+                // Draw bar growing upwards from the baseline
+                let barWidth = timelineWidth / (2018 - 1973);
+                p.rect(barX, baselineY, barWidth, -barH);
+            });
+        });
+        
+        p.noLoop();
+    };
 
     // p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
 });
