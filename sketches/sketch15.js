@@ -41,8 +41,9 @@ registerSketch('sk15', function (p) {
                 let revenueAdjStr = table.getString(r, "Revenue (Inflation Adjusted)");
                 let revenueAdj = revenueAdjStr === "" ? 0 : Number(revenueAdjStr);
 
-                let isPhysicalStr = table.getString(r, "is_physical");
-                let isPhysical = isPhysicalStr === "TRUE";
+                let rawIsPhysical = table.getString(r, "is_physical");
+                // Trim whitespace and convert to uppercase to ensure a match
+                let isPhysical = rawIsPhysical && rawIsPhysical.trim().toUpperCase() === "TRUE";
 
                 if (!format || !Number.isFinite(year)) continue;
 
@@ -151,10 +152,22 @@ registerSketch('sk15', function (p) {
                 p.text(label, MARGIN_X - 10, tickY);
             }
 
-            // 5. DRAW BARS
+            // 5. DRAW BARS WITH COLOR CODING
             let data = byFormat[format];
-            p.fill(100, 150, 250, 200); 
-            p.stroke(50, 100, 200);
+            
+            // Determine color based on is_physical property
+            // We check the first entry in the data for this format
+            // let isPhysical = data[0].isPhysical;
+            let isPhysical = data.some(d => d.isPhysical === true); 
+
+            if (isPhysical) {
+                p.fill(100, 150, 250, 200); // Blue for Physical 
+                p.stroke(50, 100, 200);
+            } else {
+                p.fill(100, 200, 150, 200); // Green for Digital
+                p.stroke(50, 150, 100);
+            }
+            
             p.strokeWeight(0.5);
 
             data.forEach(d => {
