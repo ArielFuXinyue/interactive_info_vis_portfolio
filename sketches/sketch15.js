@@ -5,6 +5,11 @@ registerSketch('sk15', function (p) {
     const YEAR_MIN = 1973;
     const YEAR_MAX = 2018;
 
+    const CHART_HEIGHT = 150; 
+    const GAP = 100;          
+    const MARGIN_X = 180;     
+    const MARGIN_Y = 60;
+
     let formats = [];
 
     p.preload = function () {
@@ -60,12 +65,6 @@ registerSketch('sk15', function (p) {
         console.log("Formats:", formats);
         console.log("Formats row 1:", Object.values(byFormat)[0]);
 
-        // Set canvas height based on number of formats to show
-        let totalHeight = (formats.length * 120) + 100; 
-        p.createCanvas(900, totalHeight);
-        
-        p.noLoop();
-
         // 1. Calculate the earliest year for each format
         let formatStartYears = formats.map(f => {
             // Filter for rows where revenue is actually greater than 0
@@ -86,61 +85,85 @@ registerSketch('sk15', function (p) {
         formats = formatStartYears.map(obj => obj.name);
 
         console.log("Sorted Formats:", formats);
+
+        // cavas size
+        let totalHeight = (formats.length * (CHART_HEIGHT + GAP)) + (MARGIN_Y * 2); 
+        p.createCanvas(1000, totalHeight); 
+        p.noLoop();
     };
 
     p.draw = function () {
         p.background(255);
-        
-        const marginX = 80;  // Space for format labels on the left
-        const marginY = 60;  // Top margin
-        const chartHeight = 80; // Height of each individual histogram
-        const gap = 40;      // Space between histograms
-        const timelineWidth = p.width - marginX - 50;
+        const timelineWidth = p.width - MARGIN_X - 50;
 
-        p.textAlign(p.LEFT, p.CENTER);
-        p.textSize(12);
+        // Calculate GLOBAL Maximum Revenue
+        let globalMaxRev = 0;
+        formats.forEach(f => {
+            let formatMax = p.max(byFormat[f].map(d => d.revenue)) || 0;
+            if (formatMax > globalMaxRev) globalMaxRev = formatMax;
+        });
 
         formats.forEach((format, index) => {
-            // Calculate vertical position for this specific format
-            let yOffset = marginY + index * (chartHeight + gap);
-            let baselineY = yOffset + chartHeight;
+            let yOffset = MARGIN_Y + index * (CHART_HEIGHT + GAP);
+            let baselineY = yOffset + CHART_HEIGHT;
 
-            // 1. Draw Format Label (e.g., "Vinyl Single", "8-Track")
+            // 1. FIXED FORMAT LABEL
             p.noStroke();
             p.fill(0);
-            p.text(format, 10, baselineY - chartHeight / 2);
+            p.textAlign(p.LEFT, p.CENTER); // Changed to LEFT
+            p.textSize(14);
+            p.textStyle(p.BOLD);
+            // Place text in the margin area (between x=10 and x=MARGIN_X)
+            p.text(format, 10, yOffset - 20); 
+            p.textStyle(p.NORMAL);
 
-            // 2. Draw the Timeline Axis (1973 - 2018)
-            p.stroke(150);
-            p.line(marginX, baselineY, marginX + timelineWidth, baselineY);
-            
-            // Draw year markers as seen in sketch (1973, 2000, 2018)
-            p.noStroke();
+            // 2. DRAW AXES
+            p.stroke(0);
+            p.strokeWeight(1);
+            p.line(MARGIN_X, baselineY, MARGIN_X + timelineWidth, baselineY); // X-axis
+            p.line(MARGIN_X, baselineY, MARGIN_X, yOffset); // Y-axis
+
+            // 3. X-AXIS: 10-year Ticks and Labels
+            for (let year = YEAR_MIN; year <= YEAR_MAX; year++) {
+                let x = p.map(year, YEAR_MIN, YEAR_MAX, MARGIN_X, MARGIN_X + timelineWidth);
+                if (year === 1973 || year % 10 === 0 || year === 2018) {
+                    p.stroke(0);
+                    p.line(x, baselineY, x, baselineY + 5); 
+                    p.noStroke();
+                    p.fill(100);
+                    p.textSize(10);
+                    p.textAlign(p.CENTER);
+                    p.text(year, x, baselineY + 20);
+                }
+            }
+
+            // 4. Y-AXIS: Shared Global Scale
+            p.textAlign(p.RIGHT, p.CENTER);
+            p.textSize(9);
             p.fill(100);
-            p.textSize(10);
-            p.text("1973", marginX, baselineY + 15);
-            p.text("2000", marginX + p.map(2000, 1973, 2018, 0, timelineWidth), baselineY + 15);
-            p.text("2018", marginX + timelineWidth - 25, baselineY + 15);
+            for (let i = 0; i <= 2; i++) {
+                let val = (globalMaxRev / 2) * i;
+                let tickY = p.map(val, 0, globalMaxRev, baselineY, yOffset);
+                p.stroke(220); 
+                p.line(MARGIN_X, tickY, MARGIN_X + timelineWidth, tickY);
+                p.noStroke();
+                let label = val >= 1000 ? (val / 1000).toFixed(1) + "B" : Math.floor(val) + "M";
+                p.text(label, MARGIN_X - 10, tickY);
+            }
 
-            // 3. Draw the Histogram Bars
+            // 5. DRAW BARS
             let data = byFormat[format];
-            // Find max revenue for this specific format to scale bars
-            let maxRev = p.max(data.map(d => d.revenue)) || 1;
-
-            p.fill(100, 150, 250, 150); // Semi-transparent blue
+            p.fill(100, 150, 250, 200); 
             p.stroke(50, 100, 200);
+            p.strokeWeight(0.5);
 
             data.forEach(d => {
-                let barX = p.map(d.year, 1973, 2018, marginX, marginX + timelineWidth);
-                let barH = p.map(d.revenue, 0, maxRev, 0, chartHeight);
-                
-                // Draw bar growing upwards from the baseline
-                let barWidth = timelineWidth / (2018 - 1973);
+                let barX = p.map(d.year, YEAR_MIN, YEAR_MAX, MARGIN_X, MARGIN_X + timelineWidth);
+                let barH = p.map(d.revenue, 0, globalMaxRev, 0, CHART_HEIGHT);
+                let barWidth = (timelineWidth / (YEAR_MAX - YEAR_MIN + 1)) * 0.9;
                 p.rect(barX, baselineY, barWidth, -barH);
             });
         });
-        
-        p.noLoop();
     };
 
     // p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
