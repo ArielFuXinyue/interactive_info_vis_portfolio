@@ -1,0 +1,1059 @@
+index,Format,Year,Units,Revenue,Revenue (Inflation Adjusted),is_physical
+0,8 - Track,1973,91000000.0,489000000,2699600000,True
+1,8 - Track,1974,96700000.0,549200000,2730600000,True
+2,8 - Track,1975,94600000.0,583000000,2656200000,True
+3,8 - Track,1976,106100000.0,678200000,2921600000,True
+4,8 - Track,1977,127300000.0,811000000,3280400000,True
+5,8 - Track,1978,133600000.0,948000000,3564000000,True
+6,8 - Track,1979,102300000.0,684300000,2310400000,True
+7,8 - Track,1980,85000000.0,527000000,1567700000,True
+8,8 - Track,1981,50000000.0,313000000,844000000,True
+9,8 - Track,1982,13700000.0,36000000,91400000,True
+10,8 - Track,1983,0.0,0,0,True
+11,8 - Track,1984,0.0,0,0,True
+12,8 - Track,1985,0.0,0,0,True
+13,8 - Track,1986,0.0,0,0,True
+14,8 - Track,1987,0.0,0,0,True
+15,8 - Track,1988,0.0,0,0,True
+16,8 - Track,1989,0.0,0,0,True
+17,8 - Track,1990,0.0,0,0,True
+18,8 - Track,1991,0.0,0,0,True
+19,8 - Track,1992,0.0,0,0,True
+20,8 - Track,1993,0.0,0,0,True
+21,8 - Track,1994,0.0,0,0,True
+22,8 - Track,1995,0.0,0,0,True
+23,8 - Track,1996,0.0,0,0,True
+24,8 - Track,1997,0.0,0,0,True
+25,8 - Track,1998,0.0,0,0,True
+26,8 - Track,1999,0.0,0,0,True
+27,8 - Track,2000,0.0,0,0,True
+28,8 - Track,2001,0.0,0,0,True
+29,8 - Track,2002,0.0,0,0,True
+30,8 - Track,2003,0.0,0,0,True
+31,8 - Track,2004,0.0,0,0,True
+32,8 - Track,2005,0.0,0,0,True
+33,8 - Track,2006,0.0,0,0,True
+34,8 - Track,2007,0.0,0,0,True
+35,8 - Track,2008,0.0,0,0,True
+36,8 - Track,2009,0.0,0,0,True
+37,8 - Track,2010,0.0,0,0,True
+38,8 - Track,2011,0.0,0,0,True
+39,8 - Track,2012,0.0,0,0,True
+40,8 - Track,2013,0.0,0,0,True
+41,8 - Track,2014,0.0,0,0,True
+42,8 - Track,2015,0.0,0,0,True
+43,8 - Track,2016,0.0,0,0,True
+44,8 - Track,2017,0.0,0,0,True
+45,8 - Track,2018,0.0,0,0,True
+46,Cassette,1973,15000000.0,76000000,419600000,True
+47,Cassette,1974,15300000.0,87200000,433600000,True
+48,Cassette,1975,16200000.0,98800000,450100000,True
+49,Cassette,1976,21800000.0,145700000,627700000,True
+50,Cassette,1977,36900000.0,249600000,1009600000,True
+51,Cassette,1978,61300000.0,449800000,1691000000,True
+52,Cassette,1979,78500000.0,580600000,1960300000,True
+53,Cassette,1980,99000000.0,705000000,2097200000,True
+54,Cassette,1981,124000000.0,1062800000,2865900000,True
+55,Cassette,1982,183200000.0,1384500000,3516800000,True
+56,Cassette,1983,236800000.0,1810900000,4456700000,True
+57,Cassette,1984,332000000.0,2383900000,5624100000,True
+58,Cassette,1985,339100000.0,2411500000,5493600000,True
+59,Cassette,1986,344500000.0,2499500000,5590100000,True
+60,Cassette,1987,410000000.0,2959700000,6386300000,True
+61,Cassette,1988,450100000.0,3385100000,7014000000,True
+62,Cassette,1989,446200000.0,3345800000,6613900000,True
+63,Cassette,1990,442200000.0,3472400000,6512300000,True
+64,Cassette,1991,360100000.0,3019600000,5434400000,True
+65,Cassette,1992,366400000.0,3116300000,5444500000,True
+66,Cassette,1993,339500000.0,2915800000,4946200000,True
+67,Cassette,1994,345400000.0,2976400000,4922900000,True
+68,Cassette,1995,272600000.0,2303600000,3705100000,True
+69,Cassette,1996,225300000.0,1905300000,2976600000,True
+70,Cassette,1997,172600000.0,1522700000,2325500000,True
+71,Cassette,1998,158500000.0,1419900000,2135300000,True
+72,Cassette,1999,123600000.0,1061600000,1561900000,True
+73,Cassette,2000,76000000.0,626000000,891100000,True
+74,Cassette,2001,45000000.0,363400000,503000000,True
+75,Cassette,2002,31100000.0,209800000,285900000,True
+76,Cassette,2003,17200000.0,108100000,144000000,True
+77,Cassette,2004,5200000.0,23700000,30800000,True
+78,Cassette,2005,2500000.0,13100000,16400000,True
+79,Cassette,2006,700000.0,3700000,4500000,True
+80,Cassette,2007,400000.0,3000000,3500000,True
+81,Cassette,2008,100000.0,900000,1000000,True
+82,Cassette,2009,0.0,0,0,True
+83,Cassette,2010,0.0,0,0,True
+84,Cassette,2011,0.0,0,0,True
+85,Cassette,2012,0.0,0,0,True
+86,Cassette,2013,0.0,0,0,True
+87,Cassette,2014,0.0,0,0,True
+88,Cassette,2015,0.0,0,0,True
+89,Cassette,2016,0.0,0,0,True
+90,Cassette,2017,0.0,0,0,True
+91,Cassette,2018,0.0,0,0,True
+92,Cassette Single,1973,0.0,0,0,True
+93,Cassette Single,1974,0.0,0,0,True
+94,Cassette Single,1975,0.0,0,0,True
+95,Cassette Single,1976,0.0,0,0,True
+96,Cassette Single,1977,0.0,0,0,True
+97,Cassette Single,1978,0.0,0,0,True
+98,Cassette Single,1979,0.0,0,0,True
+99,Cassette Single,1980,0.0,0,0,True
+100,Cassette Single,1981,0.0,0,0,True
+101,Cassette Single,1982,0.0,0,0,True
+102,Cassette Single,1983,0.0,0,0,True
+103,Cassette Single,1984,0.0,0,0,True
+104,Cassette Single,1985,0.0,0,0,True
+105,Cassette Single,1986,0.0,0,0,True
+106,Cassette Single,1987,5100000.0,14300000,30900000,True
+107,Cassette Single,1988,22500000.0,57300000,118700000,True
+108,Cassette Single,1989,76200000.0,194600000,384700000,True
+109,Cassette Single,1990,87400000.0,257900000,483700000,True
+110,Cassette Single,1991,69000000.0,230400000,414700000,True
+111,Cassette Single,1992,84600000.0,298800000,522000000,True
+112,Cassette Single,1993,85600000.0,298500000,506400000,True
+113,Cassette Single,1994,81100000.0,274900000,454700000,True
+114,Cassette Single,1995,70700000.0,236300000,380100000,True
+115,Cassette Single,1996,59900000.0,189300000,295700000,True
+116,Cassette Single,1997,42200000.0,133500000,203900000,True
+117,Cassette Single,1998,26400000.0,94400000,142000000,True
+118,Cassette Single,1999,14200000.0,48000000,70600000,True
+119,Cassette Single,2000,1300000.0,4600000,6500000,True
+120,Cassette Single,2001,-1500000.0,-5300000,-7300000,True
+121,Cassette Single,2002,-500000.0,-1600000,-2200000,True
+122,Cassette Single,2003,0.0,0,0,True
+123,Cassette Single,2004,0.0,0,0,True
+124,Cassette Single,2005,0.0,0,0,True
+125,Cassette Single,2006,0.0,0,0,True
+126,Cassette Single,2007,0.0,0,0,True
+127,Cassette Single,2008,0.0,0,0,True
+128,Cassette Single,2009,0.0,0,0,True
+129,Cassette Single,2010,0.0,0,0,True
+130,Cassette Single,2011,0.0,0,0,True
+131,Cassette Single,2012,0.0,0,0,True
+132,Cassette Single,2013,0.0,0,0,True
+133,Cassette Single,2014,0.0,0,0,True
+134,Cassette Single,2015,0.0,0,0,True
+135,Cassette Single,2016,0.0,0,0,True
+136,Cassette Single,2017,0.0,0,0,True
+137,Cassette Single,2018,0.0,0,0,True
+138,CD,1973,0.0,0,0,True
+139,CD,1974,0.0,0,0,True
+140,CD,1975,0.0,0,0,True
+141,CD,1976,0.0,0,0,True
+142,CD,1977,0.0,0,0,True
+143,CD,1978,0.0,0,0,True
+144,CD,1979,0.0,0,0,True
+145,CD,1980,0.0,0,0,True
+146,CD,1981,0.0,0,0,True
+147,CD,1982,0.0,0,0,True
+148,CD,1983,800000.0,17200000,42300000,True
+149,CD,1984,5800000.0,103300000,243700000,True
+150,CD,1985,22600000.0,389500000,887300000,True
+151,CD,1986,53000000.0,930100000,2080200000,True
+152,CD,1987,102100000.0,1593600000,3438600000,True
+153,CD,1988,149700000.0,2089900000,4330300000,True
+154,CD,1989,207200000.0,2587700000,5115300000,True
+155,CD,1990,286500000.0,3451600000,6473300000,True
+156,CD,1991,333300000.0,4337700000,7806600000,True
+157,CD,1992,407500000.0,5326500000,9306000000,True
+158,CD,1993,495400000.0,6511400000,11045500000,True
+159,CD,1994,662100000.0,8464500000,14000100000,True
+160,CD,1995,722900000.0,9377400000,15082600000,True
+161,CD,1996,778900000.0,9934700000,15520700000,True
+162,CD,1997,753100000.0,9915100000,15142600000,True
+163,CD,1998,847000000.0,11416000000,17167400000,True
+164,CD,1999,938900000.0,12816300000,18856700000,True
+165,CD,2000,942500000.0,13214500000,18810300000,True
+166,CD,2001,881900000.0,12909400000,17867600000,True
+167,CD,2002,803300000.0,12044100000,16410500000,True
+168,CD,2003,746000000.0,11232900000,14964200000,True
+169,CD,2004,767000000.0,11446500000,14853200000,True
+170,CD,2005,705400000.0,10520200000,13203800000,True
+171,CD,2006,619700000.0,9372600000,11395900000,True
+172,CD,2007,499700000.0,7452300000,8811900000,True
+173,CD,2008,368400000.0,5471300000,6229000000,True
+174,CD,2009,296600000.0,4318800000,4934500000,True
+175,CD,2010,253000000.0,3389400000,3810100000,True
+176,CD,2011,240800000.0,3100700000,3378900000,True
+177,CD,2012,198200000.0,2485600000,2718500000,True
+178,CD,2013,173800000.0,2140900000,2307700000,True
+179,CD,2014,138700000.0,1776200000,1884100000,True
+180,CD,2015,117100000.0,1445000000,1530900000,True
+181,CD,2016,97600000.0,1130800000,1183100000,True
+182,CD,2017,87700000.0,1057300000,1083100000,True
+183,CD,2018,52000000.0,698400000,698400000,True
+184,CD Single,1973,0.0,0,0,True
+185,CD Single,1974,0.0,0,0,True
+186,CD Single,1975,0.0,0,0,True
+187,CD Single,1976,0.0,0,0,True
+188,CD Single,1977,0.0,0,0,True
+189,CD Single,1978,0.0,0,0,True
+190,CD Single,1979,0.0,0,0,True
+191,CD Single,1980,0.0,0,0,True
+192,CD Single,1981,0.0,0,0,True
+193,CD Single,1982,0.0,0,0,True
+194,CD Single,1983,0.0,0,0,True
+195,CD Single,1984,0.0,0,0,True
+196,CD Single,1985,0.0,0,0,True
+197,CD Single,1986,0.0,0,0,True
+198,CD Single,1987,0.0,0,0,True
+199,CD Single,1988,1600000.0,9800000,20300000,True
+200,CD Single,1989,-100000.0,-700000,-1400000,True
+201,CD Single,1990,1100000.0,6000000,11300000,True
+202,CD Single,1991,5700000.0,35100000,63200000,True
+203,CD Single,1992,7300000.0,45100000,78800000,True
+204,CD Single,1993,7800000.0,45800000,77700000,True
+205,CD Single,1994,9300000.0,56100000,92800000,True
+206,CD Single,1995,21500000.0,110900000,178400000,True
+207,CD Single,1996,43200000.0,184100000,287600000,True
+208,CD Single,1997,66700000.0,272700000,416500000,True
+209,CD Single,1998,56000000.0,213200000,320600000,True
+210,CD Single,1999,55900000.0,222400000,327200000,True
+211,CD Single,2000,34200000.0,142700000,203100000,True
+212,CD Single,2001,17300000.0,79400000,109900000,True
+213,CD Single,2002,4500000.0,19600000,26700000,True
+214,CD Single,2003,8300000.0,36000000,48000000,True
+215,CD Single,2004,3100000.0,15000000,19500000,True
+216,CD Single,2005,2800000.0,10900000,13700000,True
+217,CD Single,2006,1700000.0,7700000,9400000,True
+218,CD Single,2007,2600000.0,12200000,14400000,True
+219,CD Single,2008,700000.0,3500000,4000000,True
+220,CD Single,2009,900000.0,3100000,3500000,True
+221,CD Single,2010,1000000.0,2900000,3300000,True
+222,CD Single,2011,1300000.0,3500000,3800000,True
+223,CD Single,2012,1100000.0,3200000,3500000,True
+224,CD Single,2013,600000.0,2400000,2600000,True
+225,CD Single,2014,900000.0,3600000,3800000,True
+226,CD Single,2015,400000.0,1200000,1300000,True
+227,CD Single,2016,100000.0,300000,300000,True
+228,CD Single,2017,100000.0,1500000,1500000,True
+229,CD Single,2018,0.0,200000,200000,True
+230,Download Album,1973,0.0,0,0,False
+231,Download Album,1974,0.0,0,0,False
+232,Download Album,1975,0.0,0,0,False
+233,Download Album,1976,0.0,0,0,False
+234,Download Album,1977,0.0,0,0,False
+235,Download Album,1978,0.0,0,0,False
+236,Download Album,1979,0.0,0,0,False
+237,Download Album,1980,0.0,0,0,False
+238,Download Album,1981,0.0,0,0,False
+239,Download Album,1982,0.0,0,0,False
+240,Download Album,1983,0.0,0,0,False
+241,Download Album,1984,0.0,0,0,False
+242,Download Album,1985,0.0,0,0,False
+243,Download Album,1986,0.0,0,0,False
+244,Download Album,1987,0.0,0,0,False
+245,Download Album,1988,0.0,0,0,False
+246,Download Album,1989,0.0,0,0,False
+247,Download Album,1990,0.0,0,0,False
+248,Download Album,1991,0.0,0,0,False
+249,Download Album,1992,0.0,0,0,False
+250,Download Album,1993,0.0,0,0,False
+251,Download Album,1994,0.0,0,0,False
+252,Download Album,1995,0.0,0,0,False
+253,Download Album,1996,0.0,0,0,False
+254,Download Album,1997,0.0,0,0,False
+255,Download Album,1998,0.0,0,0,False
+256,Download Album,1999,0.0,0,0,False
+257,Download Album,2000,0.0,0,0,False
+258,Download Album,2001,0.0,0,0,False
+259,Download Album,2002,0.0,0,0,False
+260,Download Album,2003,0.0,0,0,False
+261,Download Album,2004,4600000.0,45500000,59000000,False
+262,Download Album,2005,13600000.0,135700000,170300000,False
+263,Download Album,2006,27600000.0,275900000,335500000,False
+264,Download Album,2007,49800000.0,497400000,588100000,False
+265,Download Album,2008,63600000.0,635300000,723300000,False
+266,Download Album,2009,74500000.0,744300000,850400000,False
+267,Download Album,2010,85800000.0,872400000,980700000,False
+268,Download Album,2011,103900000.0,1070800000,1166900000,False
+269,Download Album,2012,116700000.0,1204800000,1317700000,False
+270,Download Album,2013,118000000.0,1232100000,1328100000,False
+271,Download Album,2014,114200000.0,1117900000,1185800000,False
+272,Download Album,2015,106800000.0,1064400000,1127700000,False
+273,Download Album,2016,85100000.0,868600000,908800000,False
+274,Download Album,2017,66400000.0,668500000,684800000,False
+275,Download Album,2018,49700000.0,499700000,499700000,False
+276,Download Music Video,1973,0.0,0,0,False
+277,Download Music Video,1974,0.0,0,0,False
+278,Download Music Video,1975,0.0,0,0,False
+279,Download Music Video,1976,0.0,0,0,False
+280,Download Music Video,1977,0.0,0,0,False
+281,Download Music Video,1978,0.0,0,0,False
+282,Download Music Video,1979,0.0,0,0,False
+283,Download Music Video,1980,0.0,0,0,False
+284,Download Music Video,1981,0.0,0,0,False
+285,Download Music Video,1982,0.0,0,0,False
+286,Download Music Video,1983,0.0,0,0,False
+287,Download Music Video,1984,0.0,0,0,False
+288,Download Music Video,1985,0.0,0,0,False
+289,Download Music Video,1986,0.0,0,0,False
+290,Download Music Video,1987,0.0,0,0,False
+291,Download Music Video,1988,0.0,0,0,False
+292,Download Music Video,1989,0.0,0,0,False
+293,Download Music Video,1990,0.0,0,0,False
+294,Download Music Video,1991,0.0,0,0,False
+295,Download Music Video,1992,0.0,0,0,False
+296,Download Music Video,1993,0.0,0,0,False
+297,Download Music Video,1994,0.0,0,0,False
+298,Download Music Video,1995,0.0,0,0,False
+299,Download Music Video,1996,0.0,0,0,False
+300,Download Music Video,1997,0.0,0,0,False
+301,Download Music Video,1998,0.0,0,0,False
+302,Download Music Video,1999,0.0,0,0,False
+303,Download Music Video,2000,0.0,0,0,False
+304,Download Music Video,2001,0.0,0,0,False
+305,Download Music Video,2002,0.0,0,0,False
+306,Download Music Video,2003,0.0,0,0,False
+307,Download Music Video,2004,0.0,0,0,False
+308,Download Music Video,2005,1900000.0,3700000,4600000,False
+309,Download Music Video,2006,9900000.0,19700000,24000000,False
+310,Download Music Video,2007,14200000.0,28200000,33300000,False
+311,Download Music Video,2008,20800000.0,41300000,47000000,False
+312,Download Music Video,2009,20500000.0,40900000,46700000,False
+313,Download Music Video,2010,18400000.0,36600000,41100000,False
+314,Download Music Video,2011,16300000.0,32400000,35300000,False
+315,Download Music Video,2012,10500000.0,20800000,22800000,False
+316,Download Music Video,2013,8400000.0,16700000,18000000,False
+317,Download Music Video,2014,6800000.0,13600000,14400000,False
+318,Download Music Video,2015,3200000.0,6400000,6800000,False
+319,Download Music Video,2016,2100000.0,4300000,4500000,False
+320,Download Music Video,2017,1400000.0,2800000,2900000,False
+321,Download Music Video,2018,1100000.0,2200000,2200000,False
+322,Download Single,1973,0.0,0,0,False
+323,Download Single,1974,0.0,0,0,False
+324,Download Single,1975,0.0,0,0,False
+325,Download Single,1976,0.0,0,0,False
+326,Download Single,1977,0.0,0,0,False
+327,Download Single,1978,0.0,0,0,False
+328,Download Single,1979,0.0,0,0,False
+329,Download Single,1980,0.0,0,0,False
+330,Download Single,1981,0.0,0,0,False
+331,Download Single,1982,0.0,0,0,False
+332,Download Single,1983,0.0,0,0,False
+333,Download Single,1984,0.0,0,0,False
+334,Download Single,1985,0.0,0,0,False
+335,Download Single,1986,0.0,0,0,False
+336,Download Single,1987,0.0,0,0,False
+337,Download Single,1988,0.0,0,0,False
+338,Download Single,1989,0.0,0,0,False
+339,Download Single,1990,0.0,0,0,False
+340,Download Single,1991,0.0,0,0,False
+341,Download Single,1992,0.0,0,0,False
+342,Download Single,1993,0.0,0,0,False
+343,Download Single,1994,0.0,0,0,False
+344,Download Single,1995,0.0,0,0,False
+345,Download Single,1996,0.0,0,0,False
+346,Download Single,1997,0.0,0,0,False
+347,Download Single,1998,0.0,0,0,False
+348,Download Single,1999,0.0,0,0,False
+349,Download Single,2000,0.0,0,0,False
+350,Download Single,2001,0.0,0,0,False
+351,Download Single,2002,0.0,0,0,False
+352,Download Single,2003,0.0,0,0,False
+353,Download Single,2004,139400000.0,138000000,179100000,False
+354,Download Single,2005,366900000.0,363300000,456000000,False
+355,Download Single,2006,586400000.0,580600000,705900000,False
+356,Download Single,2007,819400000.0,811000000,959000000,False
+357,Download Single,2008,1042700000.0,1032200000,1175100000,False
+358,Download Single,2009,1124400000.0,1172000000,1339100000,False
+359,Download Single,2010,1177400000.0,1336400000,1502300000,False
+360,Download Single,2011,1332300000.0,1522400000,1659000000,False
+361,Download Single,2012,1402700000.0,1644600000,1798700000,False
+362,Download Single,2013,1332800000.0,1573400000,1696000000,False
+363,Download Single,2014,1154400000.0,1355300000,1437600000,False
+364,Download Single,2015,986300000.0,1185200000,1255700000,False
+365,Download Single,2016,743000000.0,900200000,941800000,False
+366,Download Single,2017,553500000.0,678500000,695100000,False
+367,Download Single,2018,399800000.0,490400000,490400000,False
+368,DVD Audio,1973,0.0,0,0,True
+369,DVD Audio,1974,0.0,0,0,True
+370,DVD Audio,1975,0.0,0,0,True
+371,DVD Audio,1976,0.0,0,0,True
+372,DVD Audio,1977,0.0,0,0,True
+373,DVD Audio,1978,0.0,0,0,True
+374,DVD Audio,1979,0.0,0,0,True
+375,DVD Audio,1980,0.0,0,0,True
+376,DVD Audio,1981,0.0,0,0,True
+377,DVD Audio,1982,0.0,0,0,True
+378,DVD Audio,1983,0.0,0,0,True
+379,DVD Audio,1984,0.0,0,0,True
+380,DVD Audio,1985,0.0,0,0,True
+381,DVD Audio,1986,0.0,0,0,True
+382,DVD Audio,1987,0.0,0,0,True
+383,DVD Audio,1988,0.0,0,0,True
+384,DVD Audio,1989,0.0,0,0,True
+385,DVD Audio,1990,0.0,0,0,True
+386,DVD Audio,1991,0.0,0,0,True
+387,DVD Audio,1992,0.0,0,0,True
+388,DVD Audio,1993,0.0,0,0,True
+389,DVD Audio,1994,0.0,0,0,True
+390,DVD Audio,1995,0.0,0,0,True
+391,DVD Audio,1996,0.0,0,0,True
+392,DVD Audio,1997,0.0,0,0,True
+393,DVD Audio,1998,0.0,0,0,True
+394,DVD Audio,1999,0.0,0,0,True
+395,DVD Audio,2000,0.0,0,0,True
+396,DVD Audio,2001,263000.0,6000000,8300000,True
+397,DVD Audio,2002,430000.0,8500000,11600000,True
+398,DVD Audio,2003,400000.0,8000000,10700000,True
+399,DVD Audio,2004,300000.0,6500000,8400000,True
+400,DVD Audio,2005,500000.0,11200000,14100000,True
+401,DVD Audio,2006,100000.0,2400000,2900000,True
+402,DVD Audio,2007,200000.0,2800000,3300000,True
+403,DVD Audio,2008,40000.0,1200000,1400000,True
+404,DVD Audio,2009,100000.0,1600000,1800000,True
+405,DVD Audio,2010,40000.0,900000,1000000,True
+406,DVD Audio,2011,10000.0,300000,300000,True
+407,DVD Audio,2012,0.0,200000,200000,True
+408,DVD Audio,2013,-100000.0,-500000,-500000,True
+409,DVD Audio,2014,100000.0,2100000,2300000,True
+410,DVD Audio,2015,200000.0,5400000,5700000,True
+411,DVD Audio,2016,100000.0,2800000,3000000,True
+412,DVD Audio,2017,100000.0,2600000,2700000,True
+413,DVD Audio,2018,100000.0,3300000,3300000,True
+414,Kiosk,1973,0.0,0,0,False
+415,Kiosk,1974,0.0,0,0,False
+416,Kiosk,1975,0.0,0,0,False
+417,Kiosk,1976,0.0,0,0,False
+418,Kiosk,1977,0.0,0,0,False
+419,Kiosk,1978,0.0,0,0,False
+420,Kiosk,1979,0.0,0,0,False
+421,Kiosk,1980,0.0,0,0,False
+422,Kiosk,1981,0.0,0,0,False
+423,Kiosk,1982,0.0,0,0,False
+424,Kiosk,1983,0.0,0,0,False
+425,Kiosk,1984,0.0,0,0,False
+426,Kiosk,1985,0.0,0,0,False
+427,Kiosk,1986,0.0,0,0,False
+428,Kiosk,1987,0.0,0,0,False
+429,Kiosk,1988,0.0,0,0,False
+430,Kiosk,1989,0.0,0,0,False
+431,Kiosk,1990,0.0,0,0,False
+432,Kiosk,1991,0.0,0,0,False
+433,Kiosk,1992,0.0,0,0,False
+434,Kiosk,1993,0.0,0,0,False
+435,Kiosk,1994,0.0,0,0,False
+436,Kiosk,1995,0.0,0,0,False
+437,Kiosk,1996,0.0,0,0,False
+438,Kiosk,1997,0.0,0,0,False
+439,Kiosk,1998,0.0,0,0,False
+440,Kiosk,1999,0.0,0,0,False
+441,Kiosk,2000,0.0,0,0,False
+442,Kiosk,2001,0.0,0,0,False
+443,Kiosk,2002,0.0,0,0,False
+444,Kiosk,2003,0.0,0,0,False
+445,Kiosk,2004,0.0,0,0,False
+446,Kiosk,2005,700000.0,1000000,1300000,False
+447,Kiosk,2006,1400000.0,1900000,2300000,False
+448,Kiosk,2007,1800000.0,2600000,3100000,False
+449,Kiosk,2008,1600000.0,2600000,3000000,False
+450,Kiosk,2009,1700000.0,6300000,7200000,False
+451,Kiosk,2010,1700000.0,6400000,7200000,False
+452,Kiosk,2011,1300000.0,2700000,2900000,False
+453,Kiosk,2012,2000000.0,3700000,4000000,False
+454,Kiosk,2013,3700000.0,6200000,6700000,False
+455,Kiosk,2014,1600000.0,2600000,2700000,False
+456,Kiosk,2015,2200000.0,3700000,3900000,False
+457,Kiosk,2016,1700000.0,2900000,3100000,False
+458,Kiosk,2017,1300000.0,2300000,2300000,False
+459,Kiosk,2018,1100000.0,2000000,2000000,False
+460,Limited Tier Paid Subscription,1973,0.0,0,0,False
+461,Limited Tier Paid Subscription,1974,0.0,0,0,False
+462,Limited Tier Paid Subscription,1975,0.0,0,0,False
+463,Limited Tier Paid Subscription,1976,0.0,0,0,False
+464,Limited Tier Paid Subscription,1977,0.0,0,0,False
+465,Limited Tier Paid Subscription,1978,0.0,0,0,False
+466,Limited Tier Paid Subscription,1979,0.0,0,0,False
+467,Limited Tier Paid Subscription,1980,0.0,0,0,False
+468,Limited Tier Paid Subscription,1981,0.0,0,0,False
+469,Limited Tier Paid Subscription,1982,0.0,0,0,False
+470,Limited Tier Paid Subscription,1983,0.0,0,0,False
+471,Limited Tier Paid Subscription,1984,0.0,0,0,False
+472,Limited Tier Paid Subscription,1985,0.0,0,0,False
+473,Limited Tier Paid Subscription,1986,0.0,0,0,False
+474,Limited Tier Paid Subscription,1987,0.0,0,0,False
+475,Limited Tier Paid Subscription,1988,0.0,0,0,False
+476,Limited Tier Paid Subscription,1989,0.0,0,0,False
+477,Limited Tier Paid Subscription,1990,0.0,0,0,False
+478,Limited Tier Paid Subscription,1991,0.0,0,0,False
+479,Limited Tier Paid Subscription,1992,0.0,0,0,False
+480,Limited Tier Paid Subscription,1993,0.0,0,0,False
+481,Limited Tier Paid Subscription,1994,0.0,0,0,False
+482,Limited Tier Paid Subscription,1995,0.0,0,0,False
+483,Limited Tier Paid Subscription,1996,0.0,0,0,False
+484,Limited Tier Paid Subscription,1997,0.0,0,0,False
+485,Limited Tier Paid Subscription,1998,0.0,0,0,False
+486,Limited Tier Paid Subscription,1999,0.0,0,0,False
+487,Limited Tier Paid Subscription,2000,0.0,0,0,False
+488,Limited Tier Paid Subscription,2001,0.0,0,0,False
+489,Limited Tier Paid Subscription,2002,0.0,0,0,False
+490,Limited Tier Paid Subscription,2003,0.0,0,0,False
+491,Limited Tier Paid Subscription,2004,0.0,0,0,False
+492,Limited Tier Paid Subscription,2005,0.0,0,0,False
+493,Limited Tier Paid Subscription,2006,0.0,0,0,False
+494,Limited Tier Paid Subscription,2007,0.0,0,0,False
+495,Limited Tier Paid Subscription,2008,0.0,0,0,False
+496,Limited Tier Paid Subscription,2009,0.0,0,0,False
+497,Limited Tier Paid Subscription,2010,0.0,0,0,False
+498,Limited Tier Paid Subscription,2011,0.0,0,0,False
+499,Limited Tier Paid Subscription,2012,0.0,0,0,False
+500,Limited Tier Paid Subscription,2013,0.0,0,0,False
+501,Limited Tier Paid Subscription,2014,0.0,0,0,False
+502,Limited Tier Paid Subscription,2015,0.0,0,0,False
+503,Limited Tier Paid Subscription,2016,0.0,263400000,275500000,False
+504,Limited Tier Paid Subscription,2017,0.0,591600000,606100000,False
+505,Limited Tier Paid Subscription,2018,0.0,747100000,747100000,False
+506,LP/EP,1973,280000000.0,1246000000,6878800000,True
+507,LP/EP,1974,276000000.0,1356000000,6742000000,True
+508,LP/EP,1975,257000000.0,1485000000,6765900000,True
+509,LP/EP,1976,273000000.0,1663000000,7164100000,True
+510,LP/EP,1977,344000000.0,2195100000,8878900000,True
+511,LP/EP,1978,341300000.0,2473300000,9298400000,True
+512,LP/EP,1979,290000000.0,2057000000,6945100000,True
+513,LP/EP,1980,308000000.0,2200000000,6544500000,True
+514,LP/EP,1981,295200000.0,2341700000,6314600000,True
+515,LP/EP,1982,243900000.0,1925100000,4890000000,True
+516,LP/EP,1983,209600000.0,1689000000,4156700000,True
+517,LP/EP,1984,204600000.0,1548800000,3653900000,True
+518,LP/EP,1985,167000000.0,1280500000,2917100000,True
+519,LP/EP,1986,125200000.0,983000000,2198500000,True
+520,LP/EP,1987,107000000.0,793100000,1711300000,True
+521,LP/EP,1988,72400000.0,532200000,1102700000,True
+522,LP/EP,1989,34600000.0,220300000,435500000,True
+523,LP/EP,1990,11700000.0,86500000,162200000,True
+524,LP/EP,1991,4800000.0,29400000,52900000,True
+525,LP/EP,1992,2300000.0,13500000,23600000,True
+526,LP/EP,1993,1200000.0,10600000,18000000,True
+527,LP/EP,1994,1900000.0,17800000,29400000,True
+528,LP/EP,1995,2200000.0,25100000,40400000,True
+529,LP/EP,1996,2900000.0,36800000,57500000,True
+530,LP/EP,1997,2700000.0,33300000,50900000,True
+531,LP/EP,1998,3400000.0,34000000,51100000,True
+532,LP/EP,1999,2900000.0,31800000,46800000,True
+533,LP/EP,2000,2200000.0,27700000,39400000,True
+534,LP/EP,2001,2300000.0,27400000,37900000,True
+535,LP/EP,2002,1743000.0,20500000,27900000,True
+536,LP/EP,2003,1500000.0,21700000,28900000,True
+537,LP/EP,2004,1400000.0,19300000,25000000,True
+538,LP/EP,2005,1000000.0,14200000,17800000,True
+539,LP/EP,2006,900000.0,15700000,19100000,True
+540,LP/EP,2007,1300000.0,22900000,27100000,True
+541,LP/EP,2008,2900000.0,56700000,64600000,True
+542,LP/EP,2009,3500000.0,63800000,72900000,True
+543,LP/EP,2010,4200000.0,88900000,99900000,True
+544,LP/EP,2011,5500000.0,119400000,130100000,True
+545,LP/EP,2012,6900000.0,160700000,175800000,True
+546,LP/EP,2013,9400000.0,210700000,227200000,True
+547,LP/EP,2014,10300000.0,243800000,258700000,True
+548,LP/EP,2015,13700000.0,333400000,353200000,True
+549,LP/EP,2016,14800000.0,355400000,371900000,True
+550,LP/EP,2017,15600000.0,388500000,398000000,True
+551,LP/EP,2018,16700000.0,419200000,419200000,True
+552,Music Video (Physical),1973,0.0,0,0,True
+553,Music Video (Physical),1974,0.0,0,0,True
+554,Music Video (Physical),1975,0.0,0,0,True
+555,Music Video (Physical),1976,0.0,0,0,True
+556,Music Video (Physical),1977,0.0,0,0,True
+557,Music Video (Physical),1978,0.0,0,0,True
+558,Music Video (Physical),1979,0.0,0,0,True
+559,Music Video (Physical),1980,0.0,0,0,True
+560,Music Video (Physical),1981,0.0,0,0,True
+561,Music Video (Physical),1982,0.0,0,0,True
+562,Music Video (Physical),1983,0.0,0,0,True
+563,Music Video (Physical),1984,0.0,0,0,True
+564,Music Video (Physical),1985,0.0,0,0,True
+565,Music Video (Physical),1986,0.0,0,0,True
+566,Music Video (Physical),1987,0.0,0,0,True
+567,Music Video (Physical),1988,0.0,0,0,True
+568,Music Video (Physical),1989,6100000.0,115400000,228100000,True
+569,Music Video (Physical),1990,9200000.0,172300000,323100000,True
+570,Music Video (Physical),1991,6100000.0,118100000,212500000,True
+571,Music Video (Physical),1992,7600000.0,157400000,275000000,True
+572,Music Video (Physical),1993,11000000.0,213300000,361800000,True
+573,Music Video (Physical),1994,11200000.0,231100000,382200000,True
+574,Music Video (Physical),1995,12600000.0,220300000,354300000,True
+575,Music Video (Physical),1996,16900000.0,236100000,368900000,True
+576,Music Video (Physical),1997,18600000.0,323900000,494700000,True
+577,Music Video (Physical),1998,27200000.0,508000000,763900000,True
+578,Music Video (Physical),1999,19800000.0,376700000,554200000,True
+579,Music Video (Physical),2000,18200000.0,281900000,401300000,True
+580,Music Video (Physical),2001,17700000.0,329200000,455600000,True
+581,Music Video (Physical),2002,14700000.0,288400000,393000000,True
+582,Music Video (Physical),2003,19900000.0,399900000,532700000,True
+583,Music Video (Physical),2004,32800000.0,607200000,787900000,True
+584,Music Video (Physical),2005,33800000.0,602200000,755800000,True
+585,Music Video (Physical),2006,23200000.0,451100000,548500000,True
+586,Music Video (Physical),2007,27500000.0,484900000,573400000,True
+587,Music Video (Physical),2008,13200000.0,227300000,258800000,True
+588,Music Video (Physical),2009,11600000.0,209600000,239500000,True
+589,Music Video (Physical),2010,9100000.0,177600000,199600000,True
+590,Music Video (Physical),2011,7700000.0,151000000,164500000,True
+591,Music Video (Physical),2012,6000000.0,116600000,127500000,True
+592,Music Video (Physical),2013,4800000.0,106300000,114600000,True
+593,Music Video (Physical),2014,4100000.0,89700000,95200000,True
+594,Music Video (Physical),2015,3100000.0,70400000,74600000,True
+595,Music Video (Physical),2016,2500000.0,56900000,59600000,True
+596,Music Video (Physical),2017,1900000.0,38600000,39600000,True
+597,Music Video (Physical),2018,1400000.0,27600000,27600000,True
+598,On-Demand Streaming (Ad-Supported),1973,,0,0,False
+599,On-Demand Streaming (Ad-Supported),1974,,0,0,False
+600,On-Demand Streaming (Ad-Supported),1975,,0,0,False
+601,On-Demand Streaming (Ad-Supported),1976,,0,0,False
+602,On-Demand Streaming (Ad-Supported),1977,,0,0,False
+603,On-Demand Streaming (Ad-Supported),1978,,0,0,False
+604,On-Demand Streaming (Ad-Supported),1979,,0,0,False
+605,On-Demand Streaming (Ad-Supported),1980,,0,0,False
+606,On-Demand Streaming (Ad-Supported),1981,,0,0,False
+607,On-Demand Streaming (Ad-Supported),1982,,0,0,False
+608,On-Demand Streaming (Ad-Supported),1983,,0,0,False
+609,On-Demand Streaming (Ad-Supported),1984,,0,0,False
+610,On-Demand Streaming (Ad-Supported),1985,,0,0,False
+611,On-Demand Streaming (Ad-Supported),1986,,0,0,False
+612,On-Demand Streaming (Ad-Supported),1987,,0,0,False
+613,On-Demand Streaming (Ad-Supported),1988,,0,0,False
+614,On-Demand Streaming (Ad-Supported),1989,,0,0,False
+615,On-Demand Streaming (Ad-Supported),1990,,0,0,False
+616,On-Demand Streaming (Ad-Supported),1991,,0,0,False
+617,On-Demand Streaming (Ad-Supported),1992,,0,0,False
+618,On-Demand Streaming (Ad-Supported),1993,,0,0,False
+619,On-Demand Streaming (Ad-Supported),1994,,0,0,False
+620,On-Demand Streaming (Ad-Supported),1995,,0,0,False
+621,On-Demand Streaming (Ad-Supported),1996,,0,0,False
+622,On-Demand Streaming (Ad-Supported),1997,,0,0,False
+623,On-Demand Streaming (Ad-Supported),1998,,0,0,False
+624,On-Demand Streaming (Ad-Supported),1999,,0,0,False
+625,On-Demand Streaming (Ad-Supported),2000,,0,0,False
+626,On-Demand Streaming (Ad-Supported),2001,,0,0,False
+627,On-Demand Streaming (Ad-Supported),2002,,0,0,False
+628,On-Demand Streaming (Ad-Supported),2003,,0,0,False
+629,On-Demand Streaming (Ad-Supported),2004,,0,0,False
+630,On-Demand Streaming (Ad-Supported),2005,,0,0,False
+631,On-Demand Streaming (Ad-Supported),2006,,0,0,False
+632,On-Demand Streaming (Ad-Supported),2007,,0,0,False
+633,On-Demand Streaming (Ad-Supported),2008,,0,0,False
+634,On-Demand Streaming (Ad-Supported),2009,,0,0,False
+635,On-Demand Streaming (Ad-Supported),2010,,0,0,False
+636,On-Demand Streaming (Ad-Supported),2011,,113800000,124000000,False
+637,On-Demand Streaming (Ad-Supported),2012,,170900000,187000000,False
+638,On-Demand Streaming (Ad-Supported),2013,,220900000,238100000,False
+639,On-Demand Streaming (Ad-Supported),2014,,283800000,301000000,False
+640,On-Demand Streaming (Ad-Supported),2015,,372000000,394100000,False
+641,On-Demand Streaming (Ad-Supported),2016,,489400000,512000000,False
+642,On-Demand Streaming (Ad-Supported),2017,,658600000,674700000,False
+643,On-Demand Streaming (Ad-Supported),2018,,759500000,759500000,False
+644,Other Ad-Supported Streaming,1973,,0,0,False
+645,Other Ad-Supported Streaming,1974,,0,0,False
+646,Other Ad-Supported Streaming,1975,,0,0,False
+647,Other Ad-Supported Streaming,1976,,0,0,False
+648,Other Ad-Supported Streaming,1977,,0,0,False
+649,Other Ad-Supported Streaming,1978,,0,0,False
+650,Other Ad-Supported Streaming,1979,,0,0,False
+651,Other Ad-Supported Streaming,1980,,0,0,False
+652,Other Ad-Supported Streaming,1981,,0,0,False
+653,Other Ad-Supported Streaming,1982,,0,0,False
+654,Other Ad-Supported Streaming,1983,,0,0,False
+655,Other Ad-Supported Streaming,1984,,0,0,False
+656,Other Ad-Supported Streaming,1985,,0,0,False
+657,Other Ad-Supported Streaming,1986,,0,0,False
+658,Other Ad-Supported Streaming,1987,,0,0,False
+659,Other Ad-Supported Streaming,1988,,0,0,False
+660,Other Ad-Supported Streaming,1989,,0,0,False
+661,Other Ad-Supported Streaming,1990,,0,0,False
+662,Other Ad-Supported Streaming,1991,,0,0,False
+663,Other Ad-Supported Streaming,1992,,0,0,False
+664,Other Ad-Supported Streaming,1993,,0,0,False
+665,Other Ad-Supported Streaming,1994,,0,0,False
+666,Other Ad-Supported Streaming,1995,,0,0,False
+667,Other Ad-Supported Streaming,1996,,0,0,False
+668,Other Ad-Supported Streaming,1997,,0,0,False
+669,Other Ad-Supported Streaming,1998,,0,0,False
+670,Other Ad-Supported Streaming,1999,,0,0,False
+671,Other Ad-Supported Streaming,2000,,0,0,False
+672,Other Ad-Supported Streaming,2001,,0,0,False
+673,Other Ad-Supported Streaming,2002,,0,0,False
+674,Other Ad-Supported Streaming,2003,,0,0,False
+675,Other Ad-Supported Streaming,2004,,0,0,False
+676,Other Ad-Supported Streaming,2005,,0,0,False
+677,Other Ad-Supported Streaming,2006,,0,0,False
+678,Other Ad-Supported Streaming,2007,,0,0,False
+679,Other Ad-Supported Streaming,2008,,0,0,False
+680,Other Ad-Supported Streaming,2009,,0,0,False
+681,Other Ad-Supported Streaming,2010,,0,0,False
+682,Other Ad-Supported Streaming,2011,,0,0,False
+683,Other Ad-Supported Streaming,2012,,0,0,False
+684,Other Ad-Supported Streaming,2013,,0,0,False
+685,Other Ad-Supported Streaming,2014,,0,0,False
+686,Other Ad-Supported Streaming,2015,,0,0,False
+687,Other Ad-Supported Streaming,2016,,81300000,85000000,False
+688,Other Ad-Supported Streaming,2017,,261800000,268200000,False
+689,Other Ad-Supported Streaming,2018,,251400000,251400000,False
+690,Other Digital,1973,0.0,0,0,False
+691,Other Digital,1974,0.0,0,0,False
+692,Other Digital,1975,0.0,0,0,False
+693,Other Digital,1976,0.0,0,0,False
+694,Other Digital,1977,0.0,0,0,False
+695,Other Digital,1978,0.0,0,0,False
+696,Other Digital,1979,0.0,0,0,False
+697,Other Digital,1980,0.0,0,0,False
+698,Other Digital,1981,0.0,0,0,False
+699,Other Digital,1982,0.0,0,0,False
+700,Other Digital,1983,0.0,0,0,False
+701,Other Digital,1984,0.0,0,0,False
+702,Other Digital,1985,0.0,0,0,False
+703,Other Digital,1986,0.0,0,0,False
+704,Other Digital,1987,0.0,0,0,False
+705,Other Digital,1988,0.0,0,0,False
+706,Other Digital,1989,0.0,0,0,False
+707,Other Digital,1990,0.0,0,0,False
+708,Other Digital,1991,0.0,0,0,False
+709,Other Digital,1992,0.0,0,0,False
+710,Other Digital,1993,0.0,0,0,False
+711,Other Digital,1994,0.0,0,0,False
+712,Other Digital,1995,0.0,0,0,False
+713,Other Digital,1996,0.0,0,0,False
+714,Other Digital,1997,0.0,0,0,False
+715,Other Digital,1998,0.0,0,0,False
+716,Other Digital,1999,0.0,0,0,False
+717,Other Digital,2000,0.0,0,0,False
+718,Other Digital,2001,0.0,0,0,False
+719,Other Digital,2002,0.0,0,0,False
+720,Other Digital,2003,0.0,0,0,False
+721,Other Digital,2004,0.0,0,0,False
+722,Other Digital,2005,0.0,0,0,False
+723,Other Digital,2006,0.0,0,0,False
+724,Other Digital,2007,0.0,0,0,False
+725,Other Digital,2008,0.0,0,0,False
+726,Other Digital,2009,0.0,0,0,False
+727,Other Digital,2010,0.0,0,0,False
+728,Other Digital,2011,0.0,0,0,False
+729,Other Digital,2012,0.0,0,0,False
+730,Other Digital,2013,0.0,0,0,False
+731,Other Digital,2014,0.0,0,0,False
+732,Other Digital,2015,0.0,0,0,False
+733,Other Digital,2016,0.0,17100000,17900000,False
+734,Other Digital,2017,0.0,16900000,17300000,False
+735,Other Digital,2018,0.0,19800000,19800000,False
+736,Other Tapes,1973,2200000.0,15600000,86100000,True
+737,Other Tapes,1974,1900000.0,13300000,66100000,True
+738,Other Tapes,1975,1500000.0,10200000,46500000,True
+739,Other Tapes,1976,700000.0,5100000,22000000,True
+740,Other Tapes,1977,0.0,0,0,True
+741,Other Tapes,1978,0.0,0,0,True
+742,Other Tapes,1979,0.0,0,0,True
+743,Other Tapes,1980,0.0,0,0,True
+744,Other Tapes,1981,0.0,0,0,True
+745,Other Tapes,1982,0.0,0,0,True
+746,Other Tapes,1983,0.0,0,0,True
+747,Other Tapes,1984,0.0,0,0,True
+748,Other Tapes,1985,0.0,0,0,True
+749,Other Tapes,1986,0.0,0,0,True
+750,Other Tapes,1987,0.0,0,0,True
+751,Other Tapes,1988,0.0,0,0,True
+752,Other Tapes,1989,0.0,0,0,True
+753,Other Tapes,1990,0.0,0,0,True
+754,Other Tapes,1991,0.0,0,0,True
+755,Other Tapes,1992,0.0,0,0,True
+756,Other Tapes,1993,0.0,0,0,True
+757,Other Tapes,1994,0.0,0,0,True
+758,Other Tapes,1995,0.0,0,0,True
+759,Other Tapes,1996,0.0,0,0,True
+760,Other Tapes,1997,0.0,0,0,True
+761,Other Tapes,1998,0.0,0,0,True
+762,Other Tapes,1999,0.0,0,0,True
+763,Other Tapes,2000,0.0,0,0,True
+764,Other Tapes,2001,0.0,0,0,True
+765,Other Tapes,2002,0.0,0,0,True
+766,Other Tapes,2003,0.0,0,0,True
+767,Other Tapes,2004,0.0,0,0,True
+768,Other Tapes,2005,0.0,0,0,True
+769,Other Tapes,2006,0.0,0,0,True
+770,Other Tapes,2007,0.0,0,0,True
+771,Other Tapes,2008,0.0,0,0,True
+772,Other Tapes,2009,0.0,0,0,True
+773,Other Tapes,2010,0.0,0,0,True
+774,Other Tapes,2011,0.0,0,0,True
+775,Other Tapes,2012,0.0,0,0,True
+776,Other Tapes,2013,0.0,0,0,True
+777,Other Tapes,2014,0.0,0,0,True
+778,Other Tapes,2015,0.0,0,0,True
+779,Other Tapes,2016,0.0,0,0,True
+780,Other Tapes,2017,0.0,0,0,True
+781,Other Tapes,2018,0.0,0,0,True
+782,Paid Subscription,1973,,0,0,False
+783,Paid Subscription,1974,,0,0,False
+784,Paid Subscription,1975,,0,0,False
+785,Paid Subscription,1976,,0,0,False
+786,Paid Subscription,1977,,0,0,False
+787,Paid Subscription,1978,,0,0,False
+788,Paid Subscription,1979,,0,0,False
+789,Paid Subscription,1980,,0,0,False
+790,Paid Subscription,1981,,0,0,False
+791,Paid Subscription,1982,,0,0,False
+792,Paid Subscription,1983,,0,0,False
+793,Paid Subscription,1984,,0,0,False
+794,Paid Subscription,1985,,0,0,False
+795,Paid Subscription,1986,,0,0,False
+796,Paid Subscription,1987,,0,0,False
+797,Paid Subscription,1988,,0,0,False
+798,Paid Subscription,1989,,0,0,False
+799,Paid Subscription,1990,,0,0,False
+800,Paid Subscription,1991,,0,0,False
+801,Paid Subscription,1992,,0,0,False
+802,Paid Subscription,1993,,0,0,False
+803,Paid Subscription,1994,,0,0,False
+804,Paid Subscription,1995,,0,0,False
+805,Paid Subscription,1996,,0,0,False
+806,Paid Subscription,1997,,0,0,False
+807,Paid Subscription,1998,,0,0,False
+808,Paid Subscription,1999,,0,0,False
+809,Paid Subscription,2000,,0,0,False
+810,Paid Subscription,2001,,0,0,False
+811,Paid Subscription,2002,,0,0,False
+812,Paid Subscription,2003,,0,0,False
+813,Paid Subscription,2004,,0,0,False
+814,Paid Subscription,2005,,149200000,187300000,False
+815,Paid Subscription,2006,,206200000,250700000,False
+816,Paid Subscription,2007,,234000000,276700000,False
+817,Paid Subscription,2008,,221400000,252100000,False
+818,Paid Subscription,2009,,206200000,235600000,False
+819,Paid Subscription,2010,,212400000,238800000,False
+820,Paid Subscription,2011,,247800000,270000000,False
+821,Paid Subscription,2012,,399900000,437400000,False
+822,Paid Subscription,2013,,643300000,693400000,False
+823,Paid Subscription,2014,,770300000,817000000,False
+824,Paid Subscription,2015,,1156700000,1225500000,False
+825,Paid Subscription,2016,,2244200000,2347900000,False
+826,Paid Subscription,2017,,3500600000,3586100000,False
+827,Paid Subscription,2018,,4656000000,4656000000,False
+828,Ringtones & Ringbacks,1973,0.0,0,0,False
+829,Ringtones & Ringbacks,1974,0.0,0,0,False
+830,Ringtones & Ringbacks,1975,0.0,0,0,False
+831,Ringtones & Ringbacks,1976,0.0,0,0,False
+832,Ringtones & Ringbacks,1977,0.0,0,0,False
+833,Ringtones & Ringbacks,1978,0.0,0,0,False
+834,Ringtones & Ringbacks,1979,0.0,0,0,False
+835,Ringtones & Ringbacks,1980,0.0,0,0,False
+836,Ringtones & Ringbacks,1981,0.0,0,0,False
+837,Ringtones & Ringbacks,1982,0.0,0,0,False
+838,Ringtones & Ringbacks,1983,0.0,0,0,False
+839,Ringtones & Ringbacks,1984,0.0,0,0,False
+840,Ringtones & Ringbacks,1985,0.0,0,0,False
+841,Ringtones & Ringbacks,1986,0.0,0,0,False
+842,Ringtones & Ringbacks,1987,0.0,0,0,False
+843,Ringtones & Ringbacks,1988,0.0,0,0,False
+844,Ringtones & Ringbacks,1989,0.0,0,0,False
+845,Ringtones & Ringbacks,1990,0.0,0,0,False
+846,Ringtones & Ringbacks,1991,0.0,0,0,False
+847,Ringtones & Ringbacks,1992,0.0,0,0,False
+848,Ringtones & Ringbacks,1993,0.0,0,0,False
+849,Ringtones & Ringbacks,1994,0.0,0,0,False
+850,Ringtones & Ringbacks,1995,0.0,0,0,False
+851,Ringtones & Ringbacks,1996,0.0,0,0,False
+852,Ringtones & Ringbacks,1997,0.0,0,0,False
+853,Ringtones & Ringbacks,1998,0.0,0,0,False
+854,Ringtones & Ringbacks,1999,0.0,0,0,False
+855,Ringtones & Ringbacks,2000,0.0,0,0,False
+856,Ringtones & Ringbacks,2001,0.0,0,0,False
+857,Ringtones & Ringbacks,2002,0.0,0,0,False
+858,Ringtones & Ringbacks,2003,0.0,0,0,False
+859,Ringtones & Ringbacks,2004,0.0,0,0,False
+860,Ringtones & Ringbacks,2005,170000000.0,421600000,529100000,False
+861,Ringtones & Ringbacks,2006,315000000.0,773800000,940800000,False
+862,Ringtones & Ringbacks,2007,433800000.0,1055800000,1248400000,False
+863,Ringtones & Ringbacks,2008,405100000.0,977100000,1112400000,False
+864,Ringtones & Ringbacks,2009,294300000.0,702800000,803000000,False
+865,Ringtones & Ringbacks,2010,188500000.0,448000000,503600000,False
+866,Ringtones & Ringbacks,2011,115400000.0,276200000,301000000,False
+867,Ringtones & Ringbacks,2012,58800000.0,146000000,159700000,False
+868,Ringtones & Ringbacks,2013,39400000.0,98000000,105600000,False
+869,Ringtones & Ringbacks,2014,26600000.0,66300000,70300000,False
+870,Ringtones & Ringbacks,2015,21900000.0,54600000,57800000,False
+871,Ringtones & Ringbacks,2016,22600000.0,56300000,58900000,False
+872,Ringtones & Ringbacks,2017,14300000.0,35500000,36400000,False
+873,Ringtones & Ringbacks,2018,10000000.0,25000000,25000000,False
+874,SACD,1973,0.0,0,0,True
+875,SACD,1974,0.0,0,0,True
+876,SACD,1975,0.0,0,0,True
+877,SACD,1976,0.0,0,0,True
+878,SACD,1977,0.0,0,0,True
+879,SACD,1978,0.0,0,0,True
+880,SACD,1979,0.0,0,0,True
+881,SACD,1980,0.0,0,0,True
+882,SACD,1981,0.0,0,0,True
+883,SACD,1982,0.0,0,0,True
+884,SACD,1983,0.0,0,0,True
+885,SACD,1984,0.0,0,0,True
+886,SACD,1985,0.0,0,0,True
+887,SACD,1986,0.0,0,0,True
+888,SACD,1987,0.0,0,0,True
+889,SACD,1988,0.0,0,0,True
+890,SACD,1989,0.0,0,0,True
+891,SACD,1990,0.0,0,0,True
+892,SACD,1991,0.0,0,0,True
+893,SACD,1992,0.0,0,0,True
+894,SACD,1993,0.0,0,0,True
+895,SACD,1994,0.0,0,0,True
+896,SACD,1995,0.0,0,0,True
+897,SACD,1996,0.0,0,0,True
+898,SACD,1997,0.0,0,0,True
+899,SACD,1998,0.0,0,0,True
+900,SACD,1999,0.0,0,0,True
+901,SACD,2000,0.0,0,0,True
+902,SACD,2001,0.0,0,0,True
+903,SACD,2002,0.0,0,0,True
+904,SACD,2003,1300000.0,26300000,35000000,True
+905,SACD,2004,800000.0,16600000,21500000,True
+906,SACD,2005,500000.0,10000000,12600000,True
+907,SACD,2006,300000.0,5500000,6700000,True
+908,SACD,2007,200000.0,3600000,4300000,True
+909,SACD,2008,100000.0,3100000,3500000,True
+910,SACD,2009,100000.0,2400000,2700000,True
+911,SACD,2010,100000.0,1700000,1900000,True
+912,SACD,2011,100000.0,1500000,1600000,True
+913,SACD,2012,100000.0,1300000,1500000,True
+914,SACD,2013,0.0,1000000,1100000,True
+915,SACD,2014,0.0,800000,800000,True
+916,SACD,2015,0.0,1000000,1100000,True
+917,SACD,2016,0.0,1200000,1300000,True
+918,SACD,2017,0.0,900000,900000,True
+919,SACD,2018,0.0,900000,900000,True
+920,SoundExchange Distributions,1973,0.0,0,0,False
+921,SoundExchange Distributions,1974,0.0,0,0,False
+922,SoundExchange Distributions,1975,0.0,0,0,False
+923,SoundExchange Distributions,1976,0.0,0,0,False
+924,SoundExchange Distributions,1977,0.0,0,0,False
+925,SoundExchange Distributions,1978,0.0,0,0,False
+926,SoundExchange Distributions,1979,0.0,0,0,False
+927,SoundExchange Distributions,1980,0.0,0,0,False
+928,SoundExchange Distributions,1981,0.0,0,0,False
+929,SoundExchange Distributions,1982,0.0,0,0,False
+930,SoundExchange Distributions,1983,0.0,0,0,False
+931,SoundExchange Distributions,1984,0.0,0,0,False
+932,SoundExchange Distributions,1985,0.0,0,0,False
+933,SoundExchange Distributions,1986,0.0,0,0,False
+934,SoundExchange Distributions,1987,0.0,0,0,False
+935,SoundExchange Distributions,1988,0.0,0,0,False
+936,SoundExchange Distributions,1989,0.0,0,0,False
+937,SoundExchange Distributions,1990,0.0,0,0,False
+938,SoundExchange Distributions,1991,0.0,0,0,False
+939,SoundExchange Distributions,1992,0.0,0,0,False
+940,SoundExchange Distributions,1993,0.0,0,0,False
+941,SoundExchange Distributions,1994,0.0,0,0,False
+942,SoundExchange Distributions,1995,0.0,0,0,False
+943,SoundExchange Distributions,1996,0.0,0,0,False
+944,SoundExchange Distributions,1997,0.0,0,0,False
+945,SoundExchange Distributions,1998,0.0,0,0,False
+946,SoundExchange Distributions,1999,0.0,0,0,False
+947,SoundExchange Distributions,2000,0.0,0,0,False
+948,SoundExchange Distributions,2001,0.0,0,0,False
+949,SoundExchange Distributions,2002,0.0,0,0,False
+950,SoundExchange Distributions,2003,0.0,0,0,False
+951,SoundExchange Distributions,2004,0.0,6900000,9000000,False
+952,SoundExchange Distributions,2005,0.0,20400000,25600000,False
+953,SoundExchange Distributions,2006,0.0,32800000,39900000,False
+954,SoundExchange Distributions,2007,0.0,36200000,42800000,False
+955,SoundExchange Distributions,2008,0.0,100000000,113800000,False
+956,SoundExchange Distributions,2009,0.0,155500000,177700000,False
+957,SoundExchange Distributions,2010,0.0,249200000,280100000,False
+958,SoundExchange Distributions,2011,0.0,292000000,318200000,False
+959,SoundExchange Distributions,2012,0.0,462000000,505300000,False
+960,SoundExchange Distributions,2013,0.0,590400000,636400000,False
+961,SoundExchange Distributions,2014,0.0,773400000,820300000,False
+962,SoundExchange Distributions,2015,0.0,802600000,850300000,False
+963,SoundExchange Distributions,2016,0.0,883900000,924800000,False
+964,SoundExchange Distributions,2017,0.0,652000000,667900000,False
+965,SoundExchange Distributions,2018,0.0,952800000,952800000,False
+966,Synchronization,1973,0.0,0,0,False
+967,Synchronization,1974,0.0,0,0,False
+968,Synchronization,1975,0.0,0,0,False
+969,Synchronization,1976,0.0,0,0,False
+970,Synchronization,1977,0.0,0,0,False
+971,Synchronization,1978,0.0,0,0,False
+972,Synchronization,1979,0.0,0,0,False
+973,Synchronization,1980,0.0,0,0,False
+974,Synchronization,1981,0.0,0,0,False
+975,Synchronization,1982,0.0,0,0,False
+976,Synchronization,1983,0.0,0,0,False
+977,Synchronization,1984,0.0,0,0,False
+978,Synchronization,1985,0.0,0,0,False
+979,Synchronization,1986,0.0,0,0,False
+980,Synchronization,1987,0.0,0,0,False
+981,Synchronization,1988,0.0,0,0,False
+982,Synchronization,1989,0.0,0,0,False
+983,Synchronization,1990,0.0,0,0,False
+984,Synchronization,1991,0.0,0,0,False
+985,Synchronization,1992,0.0,0,0,False
+986,Synchronization,1993,0.0,0,0,False
+987,Synchronization,1994,0.0,0,0,False
+988,Synchronization,1995,0.0,0,0,False
+989,Synchronization,1996,0.0,0,0,False
+990,Synchronization,1997,0.0,0,0,False
+991,Synchronization,1998,0.0,0,0,False
+992,Synchronization,1999,0.0,0,0,False
+993,Synchronization,2000,0.0,0,0,False
+994,Synchronization,2001,0.0,0,0,False
+995,Synchronization,2002,0.0,0,0,False
+996,Synchronization,2003,0.0,0,0,False
+997,Synchronization,2004,0.0,0,0,False
+998,Synchronization,2005,0.0,0,0,False
+999,Synchronization,2006,0.0,0,0,False
+1000,Synchronization,2007,0.0,0,0,False
+1001,Synchronization,2008,0.0,0,0,False
+1002,Synchronization,2009,0.0,201200000,229900000,False
+1003,Synchronization,2010,0.0,188700000,212100000,False
+1004,Synchronization,2011,0.0,196500000,214100000,False
+1005,Synchronization,2012,0.0,190600000,208500000,False
+1006,Synchronization,2013,0.0,189700000,204500000,False
+1007,Synchronization,2014,0.0,189700000,201200000,False
+1008,Synchronization,2015,0.0,202900000,215000000,False
+1009,Synchronization,2016,0.0,214800000,224800000,False
+1010,Synchronization,2017,0.0,232100000,237800000,False
+1011,Synchronization,2018,0.0,285500000,285500000,False
+1012,Vinyl Single,1973,228000000.0,190000000,1048900000,True
+1013,Vinyl Single,1974,204000000.0,194000000,964600000,True
+1014,Vinyl Single,1975,164000000.0,211500000,963600000,True
+1015,Vinyl Single,1976,190000000.0,245100000,1055900000,True
+1016,Vinyl Single,1977,190000000.0,245100000,991400000,True
+1017,Vinyl Single,1978,190000000.0,260300000,978600000,True
+1018,Vinyl Single,1979,212000000.0,353600000,1193900000,True
+1019,Vinyl Single,1980,157000000.0,250000000,743700000,True
+1020,Vinyl Single,1981,154700000.0,256400000,691400000,True
+1021,Vinyl Single,1982,137200000.0,283000000,718800000,True
+1022,Vinyl Single,1983,124800000.0,269300000,662800000,True
+1023,Vinyl Single,1984,131500000.0,298700000,704700000,True
+1024,Vinyl Single,1985,120700000.0,281000000,640100000,True
+1025,Vinyl Single,1986,93900000.0,228100000,510100000,True
+1026,Vinyl Single,1987,82000000.0,203300000,438700000,True
+1027,Vinyl Single,1988,65600000.0,180400000,373800000,True
+1028,Vinyl Single,1989,36600000.0,116400000,230100000,True
+1029,Vinyl Single,1990,27600000.0,94400000,177000000,True
+1030,Vinyl Single,1991,22000000.0,63900000,115000000,True
+1031,Vinyl Single,1992,19800000.0,66400000,116000000,True
+1032,Vinyl Single,1993,15100000.0,51200000,86900000,True
+1033,Vinyl Single,1994,11700000.0,47200000,78100000,True
+1034,Vinyl Single,1995,10200000.0,46700000,75100000,True
+1035,Vinyl Single,1996,10100000.0,47500000,74200000,True
+1036,Vinyl Single,1997,7500000.0,35600000,54400000,True
+1037,Vinyl Single,1998,5400000.0,25700000,38600000,True
+1038,Vinyl Single,1999,5300000.0,27900000,41000000,True
+1039,Vinyl Single,2000,4800000.0,26300000,37400000,True
+1040,Vinyl Single,2001,5500000.0,31400000,43500000,True
+1041,Vinyl Single,2002,4400000.0,24900000,33900000,True
+1042,Vinyl Single,2003,3800000.0,21500000,28600000,True
+1043,Vinyl Single,2004,3500000.0,19900000,25800000,True
+1044,Vinyl Single,2005,2300000.0,13200000,16600000,True
+1045,Vinyl Single,2006,1500000.0,9900000,12000000,True
+1046,Vinyl Single,2007,600000.0,4000000,4700000,True
+1047,Vinyl Single,2008,400000.0,2900000,3300000,True
+1048,Vinyl Single,2009,300000.0,2500000,2900000,True
+1049,Vinyl Single,2010,300000.0,2300000,2600000,True
+1050,Vinyl Single,2011,400000.0,4600000,5000000,True
+1051,Vinyl Single,2012,400000.0,4700000,5200000,True
+1052,Vinyl Single,2013,300000.0,3000000,3200000,True
+1053,Vinyl Single,2014,500000.0,5500000,5800000,True
+1054,Vinyl Single,2015,500000.0,5800000,6100000,True
+1055,Vinyl Single,2016,400000.0,4900000,5100000,True
+1056,Vinyl Single,2017,400000.0,6100000,6200000,True
+1057,Vinyl Single,2018,300000.0,5300000,5300000,True
