@@ -97,6 +97,17 @@ registerSketch('sk15', function (p) {
         p.background(255);
         const timelineWidth = p.width - MARGIN_X - 50;
 
+        // 1. ADD OVERALL TITLE
+        p.push(); // Save current drawing state
+        p.fill(0);
+        p.noStroke();
+        p.textSize(24);
+        p.textStyle(p.BOLD);
+        p.textAlign(p.CENTER, p.TOP);
+        // Position the title at the top center of the canvas
+        p.text("US Recorded Music Revenue By Format From 1973-2018 inflation adjusted dollars", p.width / 2, 20);
+        p.pop(); // Restore state so title styles don't affect charts
+
         // Calculate GLOBAL Maximum Revenue
         let globalMaxRev = 0;
         formats.forEach(f => {
@@ -105,25 +116,19 @@ registerSketch('sk15', function (p) {
         });
 
         formats.forEach((format, index) => {
-            let yOffset = MARGIN_Y + index * (CHART_HEIGHT + GAP);
+            // Adjust yOffset calculation to account for the title space if needed
+            let yOffset = MARGIN_Y + 40 + index * (CHART_HEIGHT + GAP); 
             let baselineY = yOffset + CHART_HEIGHT;
 
-            // 1. FIXED FORMAT LABEL
+            // 2. FIXED FORMAT LABEL
             p.noStroke();
             p.fill(0);
-            p.textAlign(p.LEFT, p.CENTER); // Changed to LEFT
+            p.textAlign(p.LEFT, p.CENTER);
             p.textSize(14);
             p.textStyle(p.BOLD);
-            // Place text in the margin area (between x=10 and x=MARGIN_X)
             p.text(format, 10, yOffset - 20); 
             p.textStyle(p.NORMAL);
-
-            // 2. DRAW AXES
-            p.stroke(0);
-            p.strokeWeight(1);
-            p.line(MARGIN_X, baselineY, MARGIN_X + timelineWidth, baselineY); // X-axis
-            p.line(MARGIN_X, baselineY, MARGIN_X, yOffset); // Y-axis
-
+            
             // 3. X-AXIS: 10-year Ticks and Labels
             for (let year = YEAR_MIN; year <= YEAR_MAX; year++) {
                 let x = p.map(year, YEAR_MIN, YEAR_MAX, MARGIN_X, MARGIN_X + timelineWidth);
