@@ -168,23 +168,28 @@ registerSketch('sk15', function (p) {
         let activeYears = formatData.filter(d => d.revenue > 0).map(d => d.year);
         let start = Math.min(...activeYears);
         let end = Math.max(...activeYears);
+        
+        // Local Scale: find max revenue JUST for this format
+        let localMax = p.max(formatData.map(d => d.revenue)) || 0;
         let maxRow = formatData.reduce((prev, curr) => (prev.revenue > curr.revenue) ? prev : curr);
 
         p.push();
-        let boxW = 220;
-        let boxH = 100;
+        let boxW = 240;
+        let boxH = 160; // Increased height to fit the mini-chart
         let tx = hoveredData.x + 15;
         let ty = hoveredData.y - boxH - 10;
         
-        // Safety check: don't let tooltip go off-screen
+        // Boundary check
         if (tx + boxW > p.width) tx -= (boxW + 30);
         if (ty < 0) ty = hoveredData.y + 20;
 
-        p.fill(255, 255, 255, 245);
+        // Tooltip Background
+        p.fill(255, 250);
         p.stroke(0);
         p.strokeWeight(1);
-        p.rect(tx, ty, boxW, boxH, 5);
+        p.rect(tx, ty, boxW, boxH, 8);
         
+        // Text Info
         p.fill(0);
         p.noStroke();
         p.textSize(12);
@@ -192,9 +197,41 @@ registerSketch('sk15', function (p) {
         p.textStyle(p.BOLD);
         p.text(`${hoveredData.format} (${hoveredData.year})`, tx + 10, ty + 10);
         p.textStyle(p.NORMAL);
-        p.text("Revenue: " + formatCurrency(hoveredData.revenue), tx + 10, ty + 30);
-        p.text("Active Range: " + start + " - " + end, tx + 10, ty + 50);
-        p.text("Peak: " + formatCurrency(maxRow.revenue) + " (" + maxRow.year + ")", tx + 10, ty + 70);
+        p.textSize(11);
+        p.text("Current: " + formatCurrency(hoveredData.revenue), tx + 10, ty + 28);
+        p.text("Active: " + start + "-" + end, tx + 10, ty + 43);
+        p.text(`Peak: ${formatCurrency(maxRow.revenue)} (${maxRow.year})`, tx + 10, ty + 58);
+
+        // --- MINI ADAPTED HISTOGRAM ---
+        let chartX = tx + 10;
+        let chartY = ty + 145; // Baseline of mini chart
+        let chartW = boxW - 20;
+        let chartH = 60; // Max height of mini chart bars
+
+        // Mini Axis
+        p.stroke(200);
+        p.line(chartX, chartY, chartX + chartW, chartY);
+
+        formatData.forEach(d => {
+            let x = p.map(d.year, YEAR_MIN, YEAR_MAX, chartX, chartX + chartW);
+            let h = p.map(d.revenue, 0, localMax, 0, chartH);
+            let w = chartW / (YEAR_MAX - YEAR_MIN + 1);
+
+            if (d.year === hoveredData.year) {
+                p.fill(255, 204, 0); // Highlight current year in yellow
+            } else {
+                p.fill(150, 150, 150, 150); // Gray for the rest of the distribution
+            }
+            p.noStroke();
+            p.rect(x, chartY, w, -h);
+        });
+
+        // Local Scale Label
+        p.fill(150);
+        p.textSize(9);
+        p.textAlign(p.RIGHT);
+        p.text("Local Scale Max: " + formatCurrency(localMax), tx + boxW - 10, ty + 75);
+        
         p.pop();
     }
     };
