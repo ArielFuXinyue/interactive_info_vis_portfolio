@@ -90,98 +90,113 @@ registerSketch('sk15', function (p) {
         // cavas size
         let totalHeight = (formats.length * (CHART_HEIGHT + GAP)) + (MARGIN_Y * 2); 
         p.createCanvas(1000, totalHeight); 
-        p.noLoop();
+        // p.noLoop();
     };
 
+    function formatCurrency(val) {
+        return val >= 1000 ? (val / 1000).toFixed(2) + "B" : Math.floor(val) + "M";
+    }
+
     p.draw = function () {
-        p.background(255);
-        const timelineWidth = p.width - MARGIN_X - 50;
+    p.background(255);
+    const timelineWidth = p.width - MARGIN_X - 50;
+    
+    // We will store the data of the bar we are touching in this variable
+    let hoveredData = null;
 
-        // 1. ADD OVERALL TITLE
-        p.push(); // Save current drawing state
-        p.fill(0);
-        p.noStroke();
-        p.textSize(24);
-        p.textStyle(p.BOLD);
-        p.textAlign(p.CENTER, p.TOP);
-        // Position the title at the top center of the canvas
-        p.text("US Recorded Music Revenue By Format From 1973-2018 inflation adjusted dollars", p.width / 2, 20);
-        p.pop(); // Restore state so title styles don't affect charts
+    // 1. Overall Title
+    p.push();
+    p.fill(0); p.noStroke(); p.textSize(24); p.textStyle(p.BOLD); p.textAlign(p.CENTER, p.TOP);
+    p.text("US Recorded Music Revenue By Format From 1973-2018", p.width / 2, 20);
+    p.pop();
 
-        // Calculate GLOBAL Maximum Revenue
-        let globalMaxRev = 0;
-        formats.forEach(f => {
-            let formatMax = p.max(byFormat[f].map(d => d.revenue)) || 0;
-            if (formatMax > globalMaxRev) globalMaxRev = formatMax;
-        });
+    // Calculate Global Max Revenue
+    let globalMaxRev = 0;
+    formats.forEach(f => {
+        let formatMax = p.max(byFormat[f].map(d => d.revenue)) || 0;
+        if (formatMax > globalMaxRev) globalMaxRev = formatMax;
+    });
 
-        formats.forEach((format, index) => {
-            // Adjust yOffset calculation to account for the title space if needed
-            let yOffset = MARGIN_Y + 40 + index * (CHART_HEIGHT + GAP); 
-            let baselineY = yOffset + CHART_HEIGHT;
+    formats.forEach((format, index) => {
+        let yOffset = MARGIN_Y + 60 + index * (CHART_HEIGHT + GAP); 
+        let baselineY = yOffset + CHART_HEIGHT;
 
-            // 2. FIXED FORMAT LABEL
-            p.noStroke();
-            p.fill(0);
-            p.textAlign(p.LEFT, p.CENTER);
-            p.textSize(14);
-            p.textStyle(p.BOLD);
-            p.text(format, 10, yOffset - 20); 
-            p.textStyle(p.NORMAL);
-            
-            // 3. X-AXIS: 10-year Ticks and Labels
-            for (let year = YEAR_MIN; year <= YEAR_MAX; year++) {
-                let x = p.map(year, YEAR_MIN, YEAR_MAX, MARGIN_X, MARGIN_X + timelineWidth);
-                if (year === 1973 || year % 10 === 0 || year === 2018) {
-                    p.stroke(0);
-                    p.line(x, baselineY, x, baselineY + 5); 
-                    p.noStroke();
-                    p.fill(100);
-                    p.textSize(10);
-                    p.textAlign(p.CENTER);
-                    p.text(year, x, baselineY + 20);
-                }
+        // Draw Format Label
+        p.noStroke(); p.fill(0); p.textAlign(p.LEFT, p.CENTER); p.textSize(14); p.textStyle(p.BOLD);
+        p.text(format, 10, yOffset - 20); p.textStyle(p.NORMAL);
+        
+        // Draw Axes & Ticks (Existing logic)
+        p.stroke(0); p.line(MARGIN_X, baselineY, MARGIN_X + timelineWidth, baselineY);
+        for (let year = YEAR_MIN; year <= YEAR_MAX; year++) {
+            let x = p.map(year, YEAR_MIN, YEAR_MAX, MARGIN_X, MARGIN_X + timelineWidth);
+            if (year === 1973 || year % 10 === 0 || year === 2018) {
+                p.stroke(0); p.line(x, baselineY, x, baselineY + 5); 
+                p.noStroke(); p.fill(100); p.textAlign(p.CENTER);
+                p.text(year, x, baselineY + 20);
             }
+        }
 
-            // 4. Y-AXIS: Shared Global Scale
-            p.textAlign(p.RIGHT, p.CENTER);
-            p.textSize(9);
-            p.fill(100);
-            for (let i = 0; i <= 2; i++) {
-                let val = (globalMaxRev / 2) * i;
-                let tickY = p.map(val, 0, globalMaxRev, baselineY, yOffset);
-                p.stroke(220); 
-                p.line(MARGIN_X, tickY, MARGIN_X + timelineWidth, tickY);
-                p.noStroke();
-                let label = val >= 1000 ? (val / 1000).toFixed(1) + "B" : Math.floor(val) + "M";
-                p.text(label, MARGIN_X - 10, tickY);
-            }
+        // Draw Bars + HOVER DETECTION
+        let data = byFormat[format];
+        let isPhysical = data.some(d => d.isPhysical === true); 
+        
+        data.forEach(d => {
+            let barX = p.map(d.year, YEAR_MIN, YEAR_MAX, MARGIN_X, MARGIN_X + timelineWidth);
+            let barH = p.map(d.revenue, 0, globalMaxRev, 0, CHART_HEIGHT);
+            let barWidth = (timelineWidth / (YEAR_MAX - YEAR_MIN + 1)) * 0.9;
 
-            // 5. DRAW BARS WITH COLOR CODING
-            let data = byFormat[format];
-            
-            // Determine color based on is_physical property
-            // We check the first entry in the data for this format
-            // let isPhysical = data[0].isPhysical;
-            let isPhysical = data.some(d => d.isPhysical === true); 
+            // --- THE MISSING HOVER LOGIC ---
+            // Check if mouse is inside the current bar's rectangle
+            let isMouseOver = p.mouseX >= barX && p.mouseX <= barX + barWidth && 
+                              p.mouseY >= baselineY - barH && p.mouseY <= baselineY;
 
-            if (isPhysical) {
-                p.fill(100, 150, 250, 200); // Blue for Physical 
-                p.stroke(50, 100, 200);
+            if (isMouseOver) {
+                p.fill(255, 204, 0); // Highlight bar in yellow
+                hoveredData = { ...d, x: p.mouseX, y: p.mouseY }; // Capture the data
             } else {
-                p.fill(100, 200, 150, 200); // Green for Digital
-                p.stroke(50, 150, 100);
+                isPhysical ? p.fill(100, 150, 250, 200) : p.fill(100, 200, 150, 200);
             }
             
             p.strokeWeight(0.5);
-
-            data.forEach(d => {
-                let barX = p.map(d.year, YEAR_MIN, YEAR_MAX, MARGIN_X, MARGIN_X + timelineWidth);
-                let barH = p.map(d.revenue, 0, globalMaxRev, 0, CHART_HEIGHT);
-                let barWidth = (timelineWidth / (YEAR_MAX - YEAR_MIN + 1)) * 0.9;
-                p.rect(barX, baselineY, barWidth, -barH);
-            });
+            p.rect(barX, baselineY, barWidth, -barH);
         });
+    });
+
+    // 6. DRAW TOOLTIP (Moved outside the loops so it's always on top)
+    if (hoveredData) {
+        let formatData = byFormat[hoveredData.format];
+        let activeYears = formatData.filter(d => d.revenue > 0).map(d => d.year);
+        let start = Math.min(...activeYears);
+        let end = Math.max(...activeYears);
+        let maxRow = formatData.reduce((prev, curr) => (prev.revenue > curr.revenue) ? prev : curr);
+
+        p.push();
+        let boxW = 220;
+        let boxH = 100;
+        let tx = hoveredData.x + 15;
+        let ty = hoveredData.y - boxH - 10;
+        
+        // Safety check: don't let tooltip go off-screen
+        if (tx + boxW > p.width) tx -= (boxW + 30);
+        if (ty < 0) ty = hoveredData.y + 20;
+
+        p.fill(255, 255, 255, 245);
+        p.stroke(0);
+        p.strokeWeight(1);
+        p.rect(tx, ty, boxW, boxH, 5);
+        
+        p.fill(0);
+        p.noStroke();
+        p.textSize(12);
+        p.textAlign(p.LEFT, p.TOP);
+        p.textStyle(p.BOLD);
+        p.text(`${hoveredData.format} (${hoveredData.year})`, tx + 10, ty + 10);
+        p.textStyle(p.NORMAL);
+        p.text("Revenue: " + formatCurrency(hoveredData.revenue), tx + 10, ty + 30);
+        p.text("Active Range: " + start + " - " + end, tx + 10, ty + 50);
+        p.text("Peak: " + formatCurrency(maxRow.revenue) + " (" + maxRow.year + ")", tx + 10, ty + 70);
+        p.pop();
+    }
     };
 
     // p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
