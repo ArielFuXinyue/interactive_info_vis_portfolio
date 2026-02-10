@@ -186,3 +186,4 @@ registerSketch('sk15', function (p) {
 
     // p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
 });
+
