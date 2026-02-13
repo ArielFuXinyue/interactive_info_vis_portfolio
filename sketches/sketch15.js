@@ -132,7 +132,7 @@ registerSketch('sk15', function (p) {
             if (sum > totalMax) totalMax = sum;
         });
 
-        p.textAlign(p.LEFT, p.BOTTOM); p.textSize(16); p.text("Total Industry Revenue (Stacked)", MARGIN_X, currentY - 10);
+        p.textAlign(p.LEFT, p.BOTTOM); p.textSize(16); p.text("Total Industry Revenue", MARGIN_X, currentY - 10);
         
         // Helper for generic axes (used for Sum Chart)
         const drawGenericAxes = (startX, baselineY, width, height, maxVal) => {
@@ -166,6 +166,54 @@ registerSketch('sk15', function (p) {
             p.fill(100, 150, 250, 200); p.rect(x, SUM_BASELINE, w, -hPhys);
             p.fill(100, 200, 150, 200); p.rect(x, SUM_BASELINE - hPhys, w, -hDigi);
         }
+
+        // --- NEW: RED DASHED LINE FOR NAPSTER (YEAR 2000) ---
+        let napsterYear = 1999;
+        let nx = p.map(napsterYear, YEAR_MIN, YEAR_MAX, MARGIN_X, MARGIN_X + SUM_CHART_WIDTH);
+        
+        p.push();
+        p.stroke(255, 0, 0); // Red color
+        p.strokeWeight(3);
+        
+        // Enable dashed lines using the native HTML5 Canvas context
+        p.drawingContext.setLineDash([5, 5]); 
+        p.line(nx, SUM_BASELINE, nx, SUM_BASELINE - SUM_CHART_HEIGHT);
+        
+        // Reset dash so other lines stay solid
+        p.drawingContext.setLineDash([]);
+        
+        // Add Label for the line
+        p.noStroke();
+        p.fill(255, 0, 0);
+        p.textSize(12);
+        p.textStyle(p.BOLD);
+        p.textAlign(p.CENTER, p.BOTTOM);
+        p.text("1999: Napster Launch", nx, SUM_BASELINE - SUM_CHART_HEIGHT - 5);
+        p.pop();
+
+        // --- NEW: RED DASHED LINE FOR NAPSTER (YEAR 2000) ---
+        let spotifyYear = 2006;
+        nx = p.map(spotifyYear, YEAR_MIN, YEAR_MAX, MARGIN_X, MARGIN_X + SUM_CHART_WIDTH);
+        
+        p.push();
+        p.stroke(255, 0, 0); // Red color
+        p.strokeWeight(3);
+        
+        // Enable dashed lines using the native HTML5 Canvas context
+        p.drawingContext.setLineDash([5, 5]); 
+        p.line(nx, SUM_BASELINE, nx, SUM_BASELINE - SUM_CHART_HEIGHT);
+        
+        // Reset dash so other lines stay solid
+        p.drawingContext.setLineDash([]);
+        
+        // Add Label for the line
+        p.noStroke();
+        p.fill(255, 0, 0);
+        p.textSize(12);
+        p.textStyle(p.BOLD);
+        p.textAlign(p.CENTER, p.BOTTOM);
+        p.text("2006: Spotify Founded", nx, SUM_BASELINE - SUM_CHART_HEIGHT - 5);
+        p.pop();
 
         currentY = SUM_BASELINE + 120; // Move pointer below sum chart
 
