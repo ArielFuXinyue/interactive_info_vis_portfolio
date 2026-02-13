@@ -110,6 +110,49 @@ registerSketch('sk15', function (p) {
     p.text("US Recorded Music Revenue By Format From 1973-2018", p.width / 2, 20);
     p.pop();
 
+    // 1.5 LEGEND (Right-aligned with precise alignment)
+    const legendX = p.width - 160; 
+    const legendY = 70;
+    const boxSize = 12; // Size of the color block
+    
+    p.push();
+    // Legend Title
+    p.fill(0);
+    p.noStroke();
+    p.textSize(12);
+    p.textStyle(p.BOLD);
+    p.textAlign(p.LEFT, p.TOP);
+    p.text("Format Category", legendX, legendY);
+    
+    p.textStyle(p.NORMAL);
+    p.textSize(11);
+    p.textAlign(p.LEFT, p.CENTER); // Center text vertically relative to the Y coordinate
+
+    // Physical Legend Item
+    let physicalY = legendY + 30;
+    p.fill(100, 150, 250, 200);
+    p.stroke(50, 100, 200);
+    p.strokeWeight(1);
+    // Draw box slightly above the center line of the text
+    p.rect(legendX, physicalY - (boxSize / 2), boxSize, boxSize);
+    
+    p.noStroke();
+    p.fill(0);
+    // Text is now perfectly centered to the box
+    p.text("Physical", legendX + 20, physicalY);
+
+    // Digital Legend Item
+    let digitalY = legendY + 50;
+    p.fill(100, 200, 150, 200);
+    p.stroke(50, 150, 100);
+    p.strokeWeight(1);
+    p.rect(legendX, digitalY - (boxSize / 2), boxSize, boxSize);
+    
+    p.noStroke();
+    p.fill(0);
+    p.text("Digital", legendX + 20, digitalY);
+    p.pop();
+
     // Calculate Global Max Revenue
     let globalMaxRev = 0;
     formats.forEach(f => {
