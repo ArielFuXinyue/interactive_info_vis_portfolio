@@ -11,10 +11,14 @@ registerSketch('sk6', function (p) {
   let currentStateOtherSelection;
   let currentDataset = [];
 
-  p.setup = function () {
-    p.createCanvas(p.windowWidth, p.windowHeight);
+  p.preload = function() {
     usStatesTerritories = p.loadTable("data/us_states_territories.csv", "csv", "header")
     console.log("loaded states/territories data:", usStatesTerritories);
+  }
+  
+  p.setup = function () {
+    p.createCanvas(p.windowWidth, p.windowHeight);
+    
 
     // select box with options to display states, non-states, or both
     stateOthersSelect = p.createSelect();
@@ -36,14 +40,15 @@ registerSketch('sk6', function (p) {
     const newStateOtherSelection = stateOthersSelect.selected();
     // console.log("state/other selection:", stateOtherSelection);
     if(newStateOtherSelection !== currentStateOtherSelection) {
+      currentStateOtherSelection = newStateOtherSelection
       console.log("state selection box changed:", newStateOtherSelection);
       currentDataset = usStatesTerritories.getRows();
       if(currentStateOtherSelection == "State") {
         // filter for states
-        currentDataset = currentDataset.filter(row => row.Status == "state");
+        currentDataset = currentDataset.filter(row => row.obj.Status == "State");
       } else if(currentStateOtherSelection == "Non-State") {
         // filter for non-states
-        currentDataset = currentDataset.filter(row => row.Status != "state");
+        currentDataset = currentDataset.filter(row => row.obj.Status != "State");
       } // else we want all data, so no filter
 
       territoryTypeSelect.elt.innerHTML = "";
@@ -70,9 +75,9 @@ registerSketch('sk6', function (p) {
     const y0 = p.windowHeight - 100;
     const dotRadius = 5;
     for(const row of currentDataset){
-      const xPos = x0 + row.obj["Population (2020)"] / 1000000; 
-      const yPos = y0 - row.obj.REpresentatives * 2;
-      const representatives = parseInt(row.obj.Representatives.replace(",", ""))
+      const xPos = x0 + row.obj["Population (2020)"] / 100000; 
+      const yPos = y0 - row.obj.Representatives * 4;
+      const pop = parseInt(row.obj["Population (2020)"].replaceAll(",", ""));
       // if(row.obj.Name == currentTerritorySelected){
       //   p.stroke("red")
       // } else {
@@ -85,7 +90,7 @@ registerSketch('sk6', function (p) {
         x: xPos,
         y: yPos,
         r: dotRadius,
-        data: row.obj
+        row: row
       })
     }
 
@@ -93,10 +98,10 @@ registerSketch('sk6', function (p) {
     if(selectedRow){
       // find selected row
       // const selected = currentDataset.find(row => row.obj.Name === currentTerritorySelected);
-      const selectedPop = parseInt(selectedRow.obj["Population (2020)"].replace(",", ""));
+      const selectedPop = parseInt(selectedRow.obj["Population (2020)"].replaceAll(",", ""));
       // Highlight the currently selected territory in the scatterplot
-      const selectedXPos = x0 + selectedRow.obj["Population (2020)"] / 1000000; 
-      const selectedYPos = y0 - selectedRow.obj.REpresentatives * 2;
+      const selectedXPos = x0 + selectedRow.obj["Population (2020)"] / 100000; 
+      const selectedYPos = y0 - selectedRow.obj.Representatives * 4;
       p.stroke("red");
       p.circle(selectedXPos, selectedYPos, dotRadius);
       
