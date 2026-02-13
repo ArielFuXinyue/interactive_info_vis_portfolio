@@ -109,10 +109,29 @@ registerSketch('sk15', function (p) {
         let hoveredData = null;
 
         // 1. Overall Title
-        p.fill(0); p.noStroke(); p.textSize(28); p.textStyle(p.BOLD); p.textAlign(p.CENTER, p.TOP);
-        p.text("US Recorded Music Revenue By Format From 1973-2018", p.width / 2, currentY);
+        // p.fill(0); p.noStroke(); p.textSize(28); p.textStyle(p.BOLD); p.textAlign(p.CENTER, p.TOP);
+        // p.text("US Recorded Music Revenue By Format From 1973-2018", p.width / 2, currentY);
         
-        currentY += 80;
+
+        // 1. HEADER SECTION
+        // Main Title (Drawn once)
+        p.fill(0); p.noStroke(); p.textSize(28); p.textStyle(p.BOLD); p.textAlign(p.CENTER, p.TOP);
+        p.text("The Rise, Fall, and Evolution of Recorded Music (1973-2018)", p.width / 2, currentY);
+        
+        currentY += 60; // Move down for intro text
+
+        // Intro Narrative Box
+        p.textSize(14); p.textStyle(p.NORMAL); p.textAlign(p.CENTER, p.TOP);
+        let introText = "From the Walkman-driven era of Cassettes to the MP3 revolution sparked by Napster, technology has reshaped how we value music. " +
+                        "This visualization tracks the industry's $20B peak and subsequent digital transformation. " +
+                        "The left charts show market dominance (Global Scale), while the gray charts reveal the unique lifecycle 'signature' of each format (Local Scale).";
+        
+        // Drawing text in a bounding box prevents it from being one giant line
+        p.fill(60); // Dark gray for better readability
+        p.text(introText, p.width / 2 - 500, currentY, 1000); 
+
+        // CRITICAL: Increment currentY based on the intro text height
+        currentY += 120;
 
         // --- 2. TOTAL SUM STACKED HISTOGRAM ---
         const SUM_CHART_HEIGHT = 200;
@@ -132,7 +151,7 @@ registerSketch('sk15', function (p) {
             if (sum > totalMax) totalMax = sum;
         });
 
-        p.textAlign(p.LEFT, p.BOTTOM); p.textSize(16); p.text("Total Industry Revenue", MARGIN_X, currentY - 10);
+        p.textAlign(p.LEFT, p.BOTTOM); p.textSize(20); p.text("Total Industry Revenue", MARGIN_X, currentY - 10);
         
         // Helper for generic axes (used for Sum Chart)
         const drawGenericAxes = (startX, baselineY, width, height, maxVal) => {
