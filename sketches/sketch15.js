@@ -7,8 +7,13 @@ registerSketch('sk15', function (p) {
 
     const CHART_HEIGHT = 150; 
     const GAP = 100;          
-    const MARGIN_X = 180;     
-    const MARGIN_Y = 60;
+    const MARGIN_X = 150;     
+    const MARGIN_Y = 100;
+    
+    // Layout Constants
+    const GLOBAL_WIDTH = 500;
+    const LOCAL_WIDTH = 500;
+    const LOCAL_OFFSET = 800; // Starting X for the right-side chart
 
     let formats = [];
 
@@ -89,7 +94,7 @@ registerSketch('sk15', function (p) {
 
         // cavas size
         let totalHeight = (formats.length * (CHART_HEIGHT + GAP)) + (MARGIN_Y * 2); 
-        p.createCanvas(1000, totalHeight); 
+        p.createCanvas(1400, totalHeight); 
         // p.noLoop();
     };
 
@@ -98,186 +103,169 @@ registerSketch('sk15', function (p) {
     }
 
     p.draw = function () {
-    p.background(255);
-    const timelineWidth = p.width - MARGIN_X - 50;
-    
-    // We will store the data of the bar we are touching in this variable
-    let hoveredData = null;
-
-    // 1. Overall Title
-    p.push();
-    p.fill(0); p.noStroke(); p.textSize(24); p.textStyle(p.BOLD); p.textAlign(p.CENTER, p.TOP);
-    p.text("US Recorded Music Revenue By Format From 1973-2018", p.width / 2, 20);
-    p.pop();
-
-    // 1.5 LEGEND (Right-aligned with precise alignment)
-    const legendX = p.width - 160; 
-    const legendY = 70;
-    const boxSize = 12; // Size of the color block
-    
-    p.push();
-    // Legend Title
-    p.fill(0);
-    p.noStroke();
-    p.textSize(12);
-    p.textStyle(p.BOLD);
-    p.textAlign(p.LEFT, p.TOP);
-    p.text("Format Category", legendX, legendY);
-    
-    p.textStyle(p.NORMAL);
-    p.textSize(11);
-    p.textAlign(p.LEFT, p.CENTER); // Center text vertically relative to the Y coordinate
-
-    // Physical Legend Item
-    let physicalY = legendY + 30;
-    p.fill(100, 150, 250, 200);
-    p.stroke(50, 100, 200);
-    p.strokeWeight(1);
-    // Draw box slightly above the center line of the text
-    p.rect(legendX, physicalY - (boxSize / 2), boxSize, boxSize);
-    
-    p.noStroke();
-    p.fill(0);
-    // Text is now perfectly centered to the box
-    p.text("Physical", legendX + 20, physicalY);
-
-    // Digital Legend Item
-    let digitalY = legendY + 50;
-    p.fill(100, 200, 150, 200);
-    p.stroke(50, 150, 100);
-    p.strokeWeight(1);
-    p.rect(legendX, digitalY - (boxSize / 2), boxSize, boxSize);
-    
-    p.noStroke();
-    p.fill(0);
-    p.text("Digital", legendX + 20, digitalY);
-    p.pop();
-
-    // Calculate Global Max Revenue
-    let globalMaxRev = 0;
-    formats.forEach(f => {
-        let formatMax = p.max(byFormat[f].map(d => d.revenue)) || 0;
-        if (formatMax > globalMaxRev) globalMaxRev = formatMax;
-    });
-
-    formats.forEach((format, index) => {
-        let yOffset = MARGIN_Y + 60 + index * (CHART_HEIGHT + GAP); 
-        let baselineY = yOffset + CHART_HEIGHT;
-
-        // Draw Format Label
-        p.noStroke(); p.fill(0); p.textAlign(p.LEFT, p.CENTER); p.textSize(14); p.textStyle(p.BOLD);
-        p.text(format, 10, yOffset - 20); p.textStyle(p.NORMAL);
+        p.background(255);
+        const timelineWidth = p.width - MARGIN_X - 50;
         
-        // Draw Axes & Ticks (Existing logic)
-        p.stroke(0); p.line(MARGIN_X, baselineY, MARGIN_X + timelineWidth, baselineY);
-        for (let year = YEAR_MIN; year <= YEAR_MAX; year++) {
-            let x = p.map(year, YEAR_MIN, YEAR_MAX, MARGIN_X, MARGIN_X + timelineWidth);
-            if (year === 1973 || year % 10 === 0 || year === 2018) {
-                p.stroke(0); p.line(x, baselineY, x, baselineY + 5); 
-                p.noStroke(); p.fill(100); p.textAlign(p.CENTER);
-                p.text(year, x, baselineY + 20);
-            }
-        }
+        // We will store the data of the bar we are touching in this variable
+        let hoveredData = null;
 
-        // Draw Bars + HOVER DETECTION
-        let data = byFormat[format];
-        let isPhysical = data.some(d => d.isPhysical === true); 
-        
-        data.forEach(d => {
-            let barX = p.map(d.year, YEAR_MIN, YEAR_MAX, MARGIN_X, MARGIN_X + timelineWidth);
-            let barH = p.map(d.revenue, 0, globalMaxRev, 0, CHART_HEIGHT);
-            let barWidth = (timelineWidth / (YEAR_MAX - YEAR_MIN + 1)) * 0.9;
-
-            // --- THE MISSING HOVER LOGIC ---
-            // Check if mouse is inside the current bar's rectangle
-            let isMouseOver = p.mouseX >= barX && p.mouseX <= barX + barWidth && 
-                              p.mouseY >= baselineY - barH && p.mouseY <= baselineY;
-
-            if (isMouseOver) {
-                p.fill(255, 204, 0); // Highlight bar in yellow
-                hoveredData = { ...d, x: p.mouseX, y: p.mouseY }; // Capture the data
-            } else {
-                isPhysical ? p.fill(100, 150, 250, 200) : p.fill(100, 200, 150, 200);
-            }
-            
-            p.strokeWeight(0.5);
-            p.rect(barX, baselineY, barWidth, -barH);
-        });
-    });
-
-    // 6. DRAW TOOLTIP (Moved outside the loops so it's always on top)
-    if (hoveredData) {
-        let formatData = byFormat[hoveredData.format];
-        let activeYears = formatData.filter(d => d.revenue > 0).map(d => d.year);
-        let start = Math.min(...activeYears);
-        let end = Math.max(...activeYears);
-        
-        // Local Scale: find max revenue JUST for this format
-        let localMax = p.max(formatData.map(d => d.revenue)) || 0;
-        let maxRow = formatData.reduce((prev, curr) => (prev.revenue > curr.revenue) ? prev : curr);
-
+        // 1. Overall Title
         p.push();
-        let boxW = 240;
-        let boxH = 160; // Increased height to fit the mini-chart
-        let tx = hoveredData.x + 15;
-        let ty = hoveredData.y - boxH - 10;
-        
-        // Boundary check
-        if (tx + boxW > p.width) tx -= (boxW + 30);
-        if (ty < 0) ty = hoveredData.y + 20;
+        p.fill(0); p.noStroke(); p.textSize(24); p.textStyle(p.BOLD); p.textAlign(p.CENTER, p.TOP);
+        p.text("US Recorded Music Revenue By Format From 1973-2018", p.width / 2, 20);
+        p.pop();
 
-        // Tooltip Background
-        p.fill(255, 250);
-        p.stroke(0);
-        p.strokeWeight(1);
-        p.rect(tx, ty, boxW, boxH, 8);
-        
-        // Text Info
-        p.fill(0);
-        p.noStroke();
-        p.textSize(12);
-        p.textAlign(p.LEFT, p.TOP);
-        p.textStyle(p.BOLD);
-        p.text(`${hoveredData.format} (${hoveredData.year})`, tx + 10, ty + 10);
-        p.textStyle(p.NORMAL);
-        p.textSize(11);
-        p.text("Current: " + formatCurrency(hoveredData.revenue), tx + 10, ty + 28);
-        p.text("Active: " + start + "-" + end, tx + 10, ty + 43);
-        p.text(`Peak: ${formatCurrency(maxRow.revenue)} (${maxRow.year})`, tx + 10, ty + 58);
+        // 1.5 LEGEND (Right-aligned with precise alignment)
+        // Section Headers
+        p.textSize(16); p.textAlign(p.LEFT);
+        p.text("Global Scale (All Formats Compared)", MARGIN_X, 80);
+        p.text("Local Distribution (Scaled to Format Peak)", LOCAL_OFFSET, 80);
 
-        // --- MINI ADAPTED HISTOGRAM ---
-        let chartX = tx + 10;
-        let chartY = ty + 145; // Baseline of mini chart
-        let chartW = boxW - 20;
-        let chartH = 60; // Max height of mini chart bars
+        // Legend (Right-aligned relative to Global chart)
+        p.drawLegend(p, GLOBAL_WIDTH + MARGIN_X + 20, 100);
 
-        // Mini Axis
-        p.stroke(200);
-        p.line(chartX, chartY, chartX + chartW, chartY);
-
-        formatData.forEach(d => {
-            let x = p.map(d.year, YEAR_MIN, YEAR_MAX, chartX, chartX + chartW);
-            let h = p.map(d.revenue, 0, localMax, 0, chartH);
-            let w = chartW / (YEAR_MAX - YEAR_MIN + 1);
-
-            if (d.year === hoveredData.year) {
-                p.fill(255, 204, 0); // Highlight current year in yellow
-            } else {
-                p.fill(150, 150, 150, 150); // Gray for the rest of the distribution
-            }
-            p.noStroke();
-            p.rect(x, chartY, w, -h);
+        let globalMaxRev = p.max(rows.map(d => d.revenue));
+        formats.forEach(f => {
+            let formatMax = p.max(byFormat[f].map(d => d.revenue)) || 0;
+            if (formatMax > globalMaxRev) globalMaxRev = formatMax;
         });
 
-        // Local Scale Label
-        p.fill(150);
-        p.textSize(9);
-        p.textAlign(p.RIGHT);
-        p.text("Local Scale Max: " + formatCurrency(localMax), tx + boxW - 10, ty + 75);
-        
+        formats.forEach((format, index) => {
+            let yOffset = MARGIN_Y + 100 + index * (CHART_HEIGHT + GAP); 
+            let baselineY = yOffset + CHART_HEIGHT;
+            let data = byFormat[format];
+            let isPhysical = data.some(d => d.isPhysical);
+            let localMax = p.max(data.map(d => d.revenue)) || 1;
+
+            // Format Name Label
+            p.fill(0); p.noStroke(); p.textAlign(p.LEFT, p.CENTER); p.textSize(14); p.textStyle(p.BOLD);
+            p.text(format, 10, yOffset - 20); 
+
+            // --- 1. DRAW GLOBAL INTERACTIVE CHART (LEFT) ---
+            data.forEach(d => {
+                let barX = p.map(d.year, YEAR_MIN, YEAR_MAX, MARGIN_X, MARGIN_X + GLOBAL_WIDTH);
+                let barH = p.map(d.revenue, 0, globalMaxRev, 0, CHART_HEIGHT);
+                let barWidth = (GLOBAL_WIDTH / (YEAR_MAX - YEAR_MIN + 1)) * 0.9;
+
+                let isMouseOver = p.mouseX >= barX && p.mouseX <= barX + barWidth && 
+                                    p.mouseY >= baselineY - barH && p.mouseY <= baselineY;
+
+                if (isMouseOver) {
+                    p.fill(255, 204, 0); 
+                    hoveredData = { ...d, x: p.mouseX, y: p.mouseY };
+                } else {
+                    isPhysical ? p.fill(100, 150, 250, 200) : p.fill(100, 200, 150, 200);
+                }
+                p.noStroke();
+                p.rect(barX, baselineY, barWidth, -barH);
+            });
+
+            // Axis Lines for Left
+            p.stroke(200); p.line(MARGIN_X, baselineY, MARGIN_X + GLOBAL_WIDTH, baselineY);
+
+            // --- 2. DRAW STATIC LOCAL CHART (RIGHT) ---
+            data.forEach(d => {
+                let barX = p.map(d.year, YEAR_MIN, YEAR_MAX, LOCAL_OFFSET, LOCAL_OFFSET + LOCAL_WIDTH);
+                let barH = p.map(d.revenue, 0, localMax, 0, CHART_HEIGHT);
+                let barWidth = (LOCAL_WIDTH / (YEAR_MAX - YEAR_MIN + 1)) * 0.9;
+
+                p.fill(220); // Static Gray
+                p.noStroke();
+                p.rect(barX, baselineY, barWidth, -barH);
+            });
+            
+            // Axis Lines for Right
+            p.stroke(200); p.line(LOCAL_OFFSET, baselineY, LOCAL_OFFSET + LOCAL_WIDTH, baselineY);
+            p.fill(150); p.textSize(10); p.textAlign(p.LEFT);
+            p.text("Peak: " + formatCurrency(localMax), LOCAL_OFFSET + LOCAL_WIDTH + 10, baselineY - CHART_HEIGHT + 10);
+        });
+
+        // 6. DRAW TOOLTIP (Moved outside the loops so it's always on top)
+        if (hoveredData) {
+            let formatData = byFormat[hoveredData.format];
+            let activeYears = formatData.filter(d => d.revenue > 0).map(d => d.year);
+            let start = Math.min(...activeYears);
+            let end = Math.max(...activeYears);
+            
+            // Local Scale: find max revenue JUST for this format
+            let localMax = p.max(formatData.map(d => d.revenue)) || 0;
+            let maxRow = formatData.reduce((prev, curr) => (prev.revenue > curr.revenue) ? prev : curr);
+
+            p.push();
+            let boxW = 240;
+            let boxH = 160; // Increased height to fit the mini-chart
+            let tx = hoveredData.x + 15;
+            let ty = hoveredData.y - boxH - 10;
+            
+            // Boundary check
+            if (tx + boxW > p.width) tx -= (boxW + 30);
+            if (ty < 0) ty = hoveredData.y + 20;
+
+            // Tooltip Background
+            p.fill(255, 250);
+            p.stroke(0);
+            p.strokeWeight(1);
+            p.rect(tx, ty, boxW, boxH, 8);
+            
+            // Text Info
+            p.fill(0);
+            p.noStroke();
+            p.textSize(12);
+            p.textAlign(p.LEFT, p.TOP);
+            p.textStyle(p.BOLD);
+            p.text(`${hoveredData.format} (${hoveredData.year})`, tx + 10, ty + 10);
+            p.textStyle(p.NORMAL);
+            p.textSize(11);
+            p.text("Current: " + formatCurrency(hoveredData.revenue), tx + 10, ty + 28);
+            p.text("Active: " + start + "-" + end, tx + 10, ty + 43);
+            p.text(`Peak: ${formatCurrency(maxRow.revenue)} (${maxRow.year})`, tx + 10, ty + 58);
+
+            // --- MINI ADAPTED HISTOGRAM ---
+            let chartX = tx + 10;
+            let chartY = ty + 145; // Baseline of mini chart
+            let chartW = boxW - 20;
+            let chartH = 60; // Max height of mini chart bars
+
+            // Mini Axis
+            p.stroke(200);
+            p.line(chartX, chartY, chartX + chartW, chartY);
+
+            formatData.forEach(d => {
+                let x = p.map(d.year, YEAR_MIN, YEAR_MAX, chartX, chartX + chartW);
+                let h = p.map(d.revenue, 0, localMax, 0, chartH);
+                let w = chartW / (YEAR_MAX - YEAR_MIN + 1);
+
+                if (d.year === hoveredData.year) {
+                    p.fill(255, 204, 0); // Highlight current year in yellow
+                } else {
+                    p.fill(150, 150, 150, 150); // Gray for the rest of the distribution
+                }
+                p.noStroke();
+                p.rect(x, chartY, w, -h);
+            });
+
+            // Local Scale Label
+            p.fill(150);
+            p.textSize(9);
+            p.textAlign(p.RIGHT);
+            p.text("Local Scale Max: " + formatCurrency(localMax), tx + boxW - 10, ty + 75);
+            
+            p.pop();
+        }
+    };
+
+    // helper function to draw the legend
+    p.drawLegend = function(p, x, y) {
+        const boxSize = 12;
+        p.push();
+        p.textAlign(p.LEFT, p.CENTER);
+        p.textSize(11);
+        p.fill(100, 150, 250); p.rect(x, y, boxSize, boxSize);
+        p.fill(0); p.text("Physical", x + 20, y + boxSize/2);
+        p.fill(100, 200, 150); p.rect(x, y + 20, boxSize, boxSize);
+        p.fill(0); p.text("Digital", x + 20, y + 20 + boxSize/2);
         p.pop();
     }
-    };
 
     // p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
 });
